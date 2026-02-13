@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy | Nexova Digital Solution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0f; --bg-card: #111118; --border: rgba(255,255,255,0.08);
+      --accent: #00e5a0; --text-1: #f0f0f5; --text-2: #9090a8; --text-3: #55556a;
+      --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text-1); font-family: var(--font-body); font-size: 16px; line-height: 1.8; }
+    a { color: var(--accent); text-decoration: none; }
+    nav { background: rgba(10,10,15,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 860px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-head); font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: var(--text-1); }
+    .nav-logo-icon { width: 30px; height: 30px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #000; font-weight: 900; }
+    .nav-back { font-size: 0.88rem; color: var(--text-2); transition: color 0.2s; }
+    .nav-back:hover { color: var(--accent); }
+    .container { max-width: 860px; margin: 0 auto; padding: 64px 24px 96px; }
+    .page-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .page-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--accent); }
+    h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .meta { font-size: 0.88rem; color: var(--text-3); margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    h2 { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; color: var(--text-1); margin: 40px 0 14px; }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text-1); margin: 24px 0 10px; }
+    p { color: var(--text-2); margin-bottom: 16px; }
+    ul { color: var(--text-2); padding-left: 20px; margin-bottom: 16px; }
+    ul li { margin-bottom: 8px; }
+    .highlight-box { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .highlight-box p { margin: 0; font-size: 0.92rem; }
+    .scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .scenario-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .scenario-card.eligible { border-color: rgba(0,229,160,0.25); }
+    .scenario-card.not-eligible { border-color: rgba(239,68,68,0.2); }
+    .scenario-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+    .tag-yes { color: var(--accent); }
+    .tag-no { color: #f87171; }
+    .scenario-card h3 { font-size: 0.92rem; margin: 0 0 8px; }
+    .scenario-card p { font-size: 0.85rem; color: var(--text-2); margin: 0; line-height: 1.6; }
+    .steps { display: flex; flex-direction: column; gap: 16px; margin: 20px 0; }
+    .step { display: flex; gap: 16px; align-items: flex-start; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: rgba(0,229,160,0.1); border: 1px solid rgba(0,229,160,0.3); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 0.85rem; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+    .step-content h3 { font-size: 0.95rem; margin: 4px 0 4px; }
+    .step-content p { font-size: 0.88rem; color: var(--text-2); margin: 0; }
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+    .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 16px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.88rem; color: var(--text-2); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { font-size: 0.82rem; color: var(--text-3); }
+    @media (max-width: 600px) { .scenario-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><div class="nav-logo-icon">N</div>Nexova Digital</a>
+      <a href="/" class="nav-back">← Back to Home</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-label">Legal</div>
+    <h1>Refund Policy</h1>
+    <div class="meta">
+      Last updated: 13 February 2026 &nbsp;·&nbsp; Nexova Digital Solution (CA0417238-V)
+    </div>
+
+    <div class="highlight-box">
+      <p>We want you to be completely satisfied with your purchase. This policy outlines our refund and return procedures for digital products and IT consulting services, in compliance with Malaysia's <strong>Consumer Protection Act 1999</strong>.</p>
+    </div>
+
+    <h2>1. Digital Products — General Policy</h2>
+    <p>Because our products are digital and are delivered immediately upon payment, all sales are generally considered final. However, we do offer refunds in specific circumstances as described below.</p>
+    <p>We strongly encourage you to:</p>
+    <ul>
+      <li>Read the full product description before purchasing</li>
+      <li>Contact us via WhatsApp before purchasing if you have questions about compatibility or features</li>
+    </ul>
+
+    <h2>2. When You ARE Eligible for a Refund</h2>
+    <div class="scenario-grid">
+      <div class="scenario-card eligible">
+        <div class="scenario-tag tag-yes">✓ Eligible</div>
+        <h3>Product not delivered</h3>
+        <p>You paid successfully but did not receive the download link or access credentials within 24 hours.</p>
+      </div>
+      <div class="scenario-card eligible">
+        <div class="scenario-tag tag-yes">✓ Eligible</div>
+        <h3>Significantly different from description</h3>
+        <p>The product is materially different from what was described on the product page.</p>
+      </div>
+      <div class="scenario-card eligible">
+        <div class="scenario-tag tag-yes">✓ Eligible</div>
+        <h3>Technical defect we cannot fix</h3>
+        <p>The product has a critical bug or error that prevents it from functioning as described, and we are unable to provide a fix within 7 business days.</p>
+      </div>
+      <div class="scenario-card eligible">
+        <div class="scenario-tag tag-yes">✓ Eligible</div>
+        <h3>Duplicate payment</h3>
+        <p>You were charged twice for the same order due to a payment processing error.</p>
+      </div>
+    </div>
+
+    <h2>3. When You Are NOT Eligible for a Refund</h2>
+    <div class="scenario-grid">
+      <div class="scenario-card not-eligible">
+        <div class="scenario-tag tag-no">✗ Not Eligible</div>
+        <h3>Change of mind</h3>
+        <p>You changed your mind after purchasing a digital product that was delivered as described.</p>
+      </div>
+      <div class="scenario-card not-eligible">
+        <div class="scenario-tag tag-no">✗ Not Eligible</div>
+        <h3>Product already downloaded/accessed</h3>
+        <p>The product was successfully delivered and you have already downloaded or accessed it.</p>
+      </div>
+      <div class="scenario-card not-eligible">
+        <div class="scenario-tag tag-no">✗ Not Eligible</div>
+        <h3>Incompatibility you were aware of</h3>
+        <p>The product does not work with a specific tool or platform that was not listed as supported.</p>
+      </div>
+      <div class="scenario-card not-eligible">
+        <div class="scenario-tag tag-no">✗ Not Eligible</div>
+        <h3>Request after 7 days</h3>
+        <p>The refund request is made more than 7 days after the purchase date.</p>
+      </div>
+    </div>
+
+    <h2>4. IT Consulting Services — Refund Terms</h2>
+    <h3>Before project commencement:</h3>
+    <p>If you cancel before any work has begun, we will refund 100% of any deposit paid.</p>
+    <h3>After project commencement:</h3>
+    <ul>
+      <li>If cancelled within 48 hours of commencement: 75% refund of deposit</li>
+      <li>If cancelled after work has begun but before 50% completion: 50% refund of deposit</li>
+      <li>If cancelled after 50% completion: No refund of deposit; you will receive all completed work</li>
+      <li>Final milestone payments are non-refundable once the deliverable has been accepted</li>
+    </ul>
+
+    <h2>5. How to Request a Refund</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Contact us within 7 days</h3>
+          <p>Email <a href="mailto:hello@nexovadigital.co">hello@nexovadigital.co</a> or WhatsApp <a href="https://wa.me/60165484979">+60 16-548 4979</a> within 7 days of your purchase date.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Provide order details</h3>
+          <p>Include your order number, the email used to purchase, and a description of the issue you experienced.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>We review your request</h3>
+          <p>We will review your request within 2 business days and contact you with our decision.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Refund processed</h3>
+          <p>Approved refunds are processed within 5–10 business days back to your original payment method. FPX refunds: 3–5 days. Card refunds: 5–10 days depending on your bank.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>6. Chargebacks</h2>
+    <p>We encourage you to contact us directly before initiating a chargeback with your bank or payment provider. We are committed to resolving all genuine disputes fairly and promptly.</p>
+    <p>Fraudulent chargebacks on products that were delivered as described may result in account suspension and may be reported to relevant authorities.</p>
+
+    <h2>7. Exchanges</h2>
+    <p>In some cases, instead of a refund, we may offer to exchange your purchase for a different product of equal or lesser value. This will be determined on a case-by-case basis.</p>
+
+    <h2>8. Contact Us</h2>
+    <p>For refund requests or questions about this policy, please contact:</p>
+    <div class="highlight-box">
+      <p><strong>Nexova Digital Solution</strong><br/>
+      SSM No: 202603049266 (CA0417238-V)<br/>
+      Email: <a href="mailto:hello@nexovadigital.co">hello@nexovadigital.co</a><br/>
+      WhatsApp: <a href="https://wa.me/60165484979">+60 16-548 4979</a><br/>
+      Response time: Within 1 business day</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/refund">Refund Policy</a>
+    </div>
+    <div class="footer-copy">© 2026 Nexova Digital Solution (CA0417238-V) · Shah Alam, Malaysia</div>
+  </footer>
+</body>
+</html>
