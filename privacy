@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Nexova Digital Solution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0f; --bg-card: #111118; --border: rgba(255,255,255,0.08);
+      --accent: #00e5a0; --text-1: #f0f0f5; --text-2: #9090a8; --text-3: #55556a;
+      --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text-1); font-family: var(--font-body); font-size: 16px; line-height: 1.8; }
+    a { color: var(--accent); text-decoration: none; }
+    nav { background: rgba(10,10,15,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 860px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-head); font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: var(--text-1); }
+    .nav-logo-icon { width: 30px; height: 30px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #000; font-weight: 900; }
+    .nav-back { font-size: 0.88rem; color: var(--text-2); transition: color 0.2s; }
+    .nav-back:hover { color: var(--accent); }
+    .container { max-width: 860px; margin: 0 auto; padding: 64px 24px 96px; }
+    .page-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .page-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--accent); }
+    h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .meta { font-size: 0.88rem; color: var(--text-3); margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    h2 { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; color: var(--text-1); margin: 40px 0 14px; }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text-1); margin: 24px 0 10px; }
+    p { color: var(--text-2); margin-bottom: 16px; }
+    ul { color: var(--text-2); padding-left: 20px; margin-bottom: 16px; }
+    ul li { margin-bottom: 8px; }
+    .highlight-box { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .highlight-box p { margin: 0; font-size: 0.92rem; }
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+    .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 16px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.88rem; color: var(--text-2); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { font-size: 0.82rem; color: var(--text-3); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><div class="nav-logo-icon">N</div>Nexova Digital</a>
+      <a href="/" class="nav-back">← Back to Home</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-label">Legal</div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      Last updated: 13 February 2026 &nbsp;·&nbsp; Nexova Digital Solution (CA0417238-V)
+    </div>
+
+    <div class="highlight-box">
+      <p>This Privacy Policy describes how Nexova Digital Solution ("we", "us", or "our") collects, uses, and protects your personal information in accordance with the <strong>Personal Data Protection Act 2010 (PDPA)</strong> of Malaysia.</p>
+    </div>
+
+    <h2>1. Who We Are</h2>
+    <p>Nexova Digital Solution is a sole proprietorship registered in Malaysia (SSM Registration No. 202603049266 / CA0417238-V), with its principal place of business at No. 6, Jalan U13/53A, Eco Ardence Seksyen U13, 40170 Shah Alam, Selangor, Malaysia.</p>
+    <p>We provide digital products, software tools, and IT consulting services to businesses across Southeast Asia.</p>
+
+    <h2>2. Information We Collect</h2>
+    <h3>Information you provide directly:</h3>
+    <ul>
+      <li>Name and contact information (email address, phone number)</li>
+      <li>Business name and company details</li>
+      <li>Billing and payment information (processed securely via our payment partners)</li>
+      <li>Communications you send us via WhatsApp, email, or contact forms</li>
+      <li>Account credentials if you register on our platform</li>
+    </ul>
+    <h3>Information collected automatically:</h3>
+    <ul>
+      <li>IP address and browser type</li>
+      <li>Pages visited and time spent on our website</li>
+      <li>Device information and operating system</li>
+      <li>Referring website or source</li>
+    </ul>
+    <h3>Payment information:</h3>
+    <p>We do not store your full credit card or banking details on our servers. All payment transactions are processed by our licensed payment partners (Billplz Sdn Bhd and Stripe Inc.), which maintain their own security standards and privacy policies.</p>
+
+    <h2>3. How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Process and fulfil your orders for digital products and services</li>
+      <li>Send you purchase confirmations, invoices, and download links</li>
+      <li>Provide customer support and respond to your enquiries</li>
+      <li>Send product updates, new features, or promotional offers (you may opt out at any time)</li>
+      <li>Improve our website, products, and services</li>
+      <li>Comply with legal obligations and prevent fraud</li>
+      <li>Enforce our Terms of Service</li>
+    </ul>
+
+    <h2>4. Legal Basis for Processing</h2>
+    <p>Under the PDPA 2010, we process your personal data on the following bases:</p>
+    <ul>
+      <li><strong>Contractual necessity:</strong> To fulfil orders and deliver services you have purchased</li>
+      <li><strong>Legitimate interests:</strong> To improve our products and prevent fraud</li>
+      <li><strong>Legal obligation:</strong> To comply with Malaysian tax and business laws</li>
+      <li><strong>Consent:</strong> For marketing communications (which you may withdraw at any time)</li>
+    </ul>
+
+    <h2>5. Sharing Your Information</h2>
+    <p>We do not sell, trade, or rent your personal information to third parties. We may share your information with:</p>
+    <ul>
+      <li><strong>Payment processors:</strong> Billplz Sdn Bhd and Stripe Inc., to process your payments securely</li>
+      <li><strong>Service providers:</strong> Hosting providers (Vercel Inc.) and analytics tools necessary to operate our website</li>
+      <li><strong>Legal authorities:</strong> When required by Malaysian law, court order, or to protect our legal rights</li>
+    </ul>
+
+    <h2>6. Data Retention</h2>
+    <p>We retain your personal data for as long as necessary to fulfil the purposes outlined in this policy, typically:</p>
+    <ul>
+      <li>Transaction records: 7 years (as required by Malaysian tax law)</li>
+      <li>Customer support communications: 2 years</li>
+      <li>Marketing preferences: Until you opt out</li>
+    </ul>
+
+    <h2>7. Your Rights Under PDPA 2010</h2>
+    <p>As a data subject under Malaysian law, you have the right to:</p>
+    <ul>
+      <li>Access your personal data held by us</li>
+      <li>Correct inaccurate or incomplete personal data</li>
+      <li>Withdraw consent for processing at any time</li>
+      <li>Request that we stop processing your data for direct marketing</li>
+    </ul>
+    <p>To exercise these rights, contact us at: <a href="mailto:hello@nexovadigital.co">hello@nexovadigital.co</a> or WhatsApp: <a href="https://wa.me/60165484979">+60 16-548 4979</a></p>
+
+    <h2>8. Cookies</h2>
+    <p>Our website may use cookies and similar technologies to enhance your browsing experience and analyse website traffic. You can control cookie settings through your browser. Disabling cookies may affect some functionality of our website.</p>
+
+    <h2>9. Security</h2>
+    <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure, or destruction. All data transmission on our website uses SSL/TLS encryption (HTTPS).</p>
+
+    <h2>10. Third-Party Links</h2>
+    <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of those websites and encourage you to review their privacy policies.</p>
+
+    <h2>11. Children's Privacy</h2>
+    <p>Our services are intended for businesses and adults aged 18 and above. We do not knowingly collect personal data from children under 18.</p>
+
+    <h2>12. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the new policy on this page with an updated "Last updated" date. Your continued use of our services after any changes constitutes acceptance of the updated policy.</p>
+
+    <h2>13. Contact Us</h2>
+    <p>For any privacy-related questions, concerns, or requests, please contact:</p>
+    <div class="highlight-box">
+      <p><strong>Nexova Digital Solution</strong><br/>
+      SSM No: 202603049266 (CA0417238-V)<br/>
+      No. 6, Jalan U13/53A, Eco Ardence Seksyen U13, 40170 Shah Alam, Selangor<br/>
+      Email: <a href="mailto:hello@nexovadigital.co">hello@nexovadigital.co</a><br/>
+      WhatsApp: <a href="https://wa.me/60165484979">+60 16-548 4979</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/refund">Refund Policy</a>
+    </div>
+    <div class="footer-copy">© 2026 Nexova Digital Solution (CA0417238-V) · Shah Alam, Malaysia</div>
+  </footer>
+</body>
+</html>
