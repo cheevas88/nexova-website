@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SEA E-Commerce Suite | Nexova Digital</title>
+  <meta name="description" content="Next.js storefront with multi-country payment support for MY/ID/TH/SG/TW, inventory system and one-click Vercel deploy. RM999 one-time."/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#030308;--bg-card:#0d0d1a;--cyan:#00fff5;--mag:#ff00aa;--purple:#8b5cf6;--green:#00ff88;--gold:#f59e0b;--t1:#e8e8f8;--t2:#8888aa;--t3:#44445a;--fh:'Orbitron',monospace;--fb:'Rajdhani',sans-serif;--fm:'Share Tech Mono',monospace;}
+    *{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--t1);font-family:var(--fb);font-size:17px;line-height:1.7;overflow-x:hidden;}
+    body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,255,245,.010) 2px,rgba(0,255,245,.010) 4px);pointer-events:none;z-index:900;}
+    a{color:var(--cyan);text-decoration:none;}a:hover{color:var(--mag);}
+    nav{background:rgba(3,3,8,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(245,158,11,.15);padding:14px 0;position:sticky;top:0;z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-family:var(--fh);font-size:.85rem;font-weight:800;letter-spacing:.08em;display:flex;align-items:center;gap:10px;color:var(--t1);}
+    .nav-logo-img{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(0,255,245,.7));}
+    .nav-back{font-family:var(--fm);font-size:.75rem;color:var(--t2);transition:color .2s;}
+    .nav-back:hover{color:var(--cyan);}
+    .nav-buy{font-family:var(--fh);font-size:.65rem;font-weight:700;letter-spacing:.1em;background:linear-gradient(135deg,var(--gold),var(--mag));color:#000;padding:10px 20px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all .2s;box-shadow:0 0 20px rgba(245,158,11,.3);}
+    .nav-buy:hover{box-shadow:0 0 30px rgba(245,158,11,.5);color:#000;}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
+    .hero{padding:64px 0 80px;position:relative;overflow:hidden;border-bottom:1px solid rgba(245,158,11,.06);}
+    .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(245,158,11,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(245,158,11,.03) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 90% 90% at 70% 50%,black,transparent);}
+    .hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+    .orb1{width:450px;height:450px;background:var(--gold);top:-100px;right:-80px;opacity:.05;}
+    .orb2{width:300px;height:300px;background:var(--purple);bottom:0;left:5%;opacity:.07;}
+    .hero-layout{display:grid;grid-template-columns:1fr 440px;gap:56px;align-items:center;position:relative;z-index:1;}
+    .breadcrumb{font-family:var(--fm);font-size:11px;color:var(--t3);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+    .breadcrumb a{color:var(--t2);}.breadcrumb a:hover{color:var(--cyan);}
+    .badge-row{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+    .badge{font-family:var(--fm);font-size:10px;letter-spacing:.1em;padding:4px 12px;border:1px solid;}
+    h1{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;margin-bottom:16px;}
+    .h1a{background:linear-gradient(90deg,var(--gold),var(--mag));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 15px rgba(245,158,11,.3));}
+    .hero-tagline{font-size:1.1rem;color:var(--t2);line-height:1.8;max-width:500px;margin-bottom:32px;border-left:2px solid rgba(245,158,11,.3);padding-left:16px;}
+    .quick-stats{display:flex;gap:28px;margin-bottom:36px;flex-wrap:wrap;}
+    .qs-val{font-family:var(--fh);font-size:1.4rem;font-weight:900;color:var(--gold);text-shadow:0 0 12px rgba(245,158,11,.4);line-height:1;}
+    .qs-lab{font-family:var(--fm);font-size:10px;color:var(--t3);letter-spacing:.08em;margin-top:4px;}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:.7rem;font-weight:700;letter-spacing:.12em;padding:16px 32px;background:linear-gradient(135deg,var(--gold),var(--mag));color:#000;clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);transition:all .25s;box-shadow:0 0 30px rgba(245,158,11,.25);}
+    .btn-primary:hover{box-shadow:0 0 50px rgba(245,158,11,.5);transform:translateY(-2px);color:#000;}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:.7rem;font-weight:700;letter-spacing:.12em;padding:16px 28px;background:transparent;color:var(--cyan);border:1px solid rgba(0,255,245,.3);clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);transition:all .25s;}
+    .btn-ghost:hover{background:rgba(0,255,245,.08);color:var(--cyan);}
+
+    /* Storefront mockup */
+    .store-mockup{background:var(--bg-card);border:1px solid rgba(245,158,11,.2);clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%);overflow:hidden;box-shadow:0 0 60px rgba(245,158,11,.07),0 40px 80px rgba(0,0,0,.5);}
+    .store-mockup::before{content:'';position:absolute;top:0;right:0;border-style:solid;border-width:0 20px 20px 0;border-color:transparent rgba(245,158,11,.3) transparent transparent;z-index:2;position:relative;}
+    .store-bar{background:rgba(0,0,0,.6);padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.05);}
+    .store-dots{display:flex;gap:4px;}
+    .sdot{width:8px;height:8px;border-radius:50%;}
+    .store-url{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:3px 10px;font-family:var(--fm);font-size:9px;color:var(--t3);}
+    .store-nav{background:rgba(0,0,0,.4);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.04);}
+    .store-brand{font-family:var(--fh);font-size:.7rem;font-weight:800;color:var(--gold);}
+    .store-menu{display:flex;gap:12px;}
+    .store-menu-item{font-family:var(--fm);font-size:8px;color:var(--t3);}
+    .store-hero-band{background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(139,92,246,.08));padding:20px 16px;text-align:center;border-bottom:1px solid rgba(255,255,255,.04);}
+    .store-hero-title{font-family:var(--fh);font-size:.75rem;font-weight:700;color:var(--gold);margin-bottom:4px;}
+    .store-hero-sub{font-family:var(--fm);font-size:8px;color:var(--t2);}
+    .store-hero-btn{display:inline-block;background:var(--gold);color:#000;font-family:var(--fh);font-size:7px;font-weight:700;padding:5px 14px;margin-top:8px;clip-path:polygon(4px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%);}
+    .store-products{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:12px;}
+    .store-prod{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.05);}
+    .store-prod-img{height:50px;background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(139,92,246,.1));display:flex;align-items:center;justify-content:center;font-size:18px;}
+    .store-prod-info{padding:6px;}
+    .store-prod-name{font-family:var(--fm);font-size:7px;color:var(--t2);margin-bottom:2px;}
+    .store-prod-price{font-family:var(--fh);font-size:8px;color:var(--gold);}
+    .store-prod-btn{width:100%;background:rgba(245,158,11,.15);border:none;border-top:1px solid rgba(245,158,11,.2);padding:4px;font-family:var(--fm);font-size:7px;color:var(--gold);cursor:pointer;transition:background .2s;}
+    .price-card{background:rgba(0,0,0,.5);border-top:1px solid rgba(245,158,11,.15);padding:22px 24px;}
+    .price-label{font-family:var(--fm);font-size:10px;color:var(--t3);margin-bottom:4px;}
+    .price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:14px;}
+    .price-rm{font-family:var(--fm);font-size:.9rem;color:var(--t2);}
+    .price-amt{font-family:var(--fh);font-size:2.6rem;font-weight:900;color:var(--gold);text-shadow:0 0 20px rgba(245,158,11,.5);line-height:1;}
+    .price-once{font-family:var(--fm);font-size:.75rem;color:var(--t3);}
+    .pi{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--t2);margin-bottom:4px;}
+    .pi-check{font-family:var(--fm);font-size:10px;color:var(--green);}
+
+    .section{padding:80px 0;border-top:1px solid rgba(0,255,245,.04);}
+    .sec-tag{font-family:var(--fm);font-size:11px;color:var(--gold);letter-spacing:.2em;display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+    .sec-tag::before{content:'//';color:var(--t3);}
+    .sec-title{font-family:var(--fh);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:12px;}
+    .sec-sub{font-size:.95rem;color:var(--t2);max-width:560px;line-height:1.8;margin-bottom:48px;}
+
+    /* Country payment support */
+    .country-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:rgba(245,158,11,.04);margin-bottom:48px;}
+    .country-card{background:var(--bg-card);padding:24px 16px;text-align:center;transition:all .3s;}
+    .country-card:hover{background:rgba(13,13,26,.98);}
+    .country-flag{font-size:28px;margin-bottom:10px;}
+    .country-name{font-family:var(--fh);font-size:.65rem;font-weight:700;letter-spacing:.06em;margin-bottom:10px;color:var(--gold);}
+    .country-methods{display:flex;flex-direction:column;gap:4px;}
+    .cmethod{font-family:var(--fm);font-size:9px;color:var(--t3);background:rgba(255,255,255,.03);padding:3px 6px;}
+
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(245,158,11,.04);}
+    .feat{background:var(--bg-card);padding:28px;position:relative;transition:all .3s;}
+    .feat::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s;}
+    .feat:hover::after{opacity:1;}
+    .feat-title{font-family:var(--fh);font-size:.78rem;font-weight:700;margin-bottom:8px;margin-top:12px;}
+    .feat-desc{font-size:.85rem;color:var(--t2);line-height:1.6;}
+
+    .spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(245,158,11,.04);}
+    .spec-row{background:var(--bg-card);padding:20px 24px;display:flex;gap:16px;}
+    .spec-key{font-family:var(--fm);font-size:.78rem;color:var(--t3);width:140px;flex-shrink:0;}
+    .spec-val .tag{display:inline-block;font-family:var(--fm);font-size:10px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:var(--gold);padding:2px 8px;margin:2px 2px 2px 0;}
+
+    .deliverables{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(245,158,11,.04);}
+    .deliv-item{background:var(--bg-card);padding:24px 28px;display:flex;gap:16px;}
+    .deliv-icon-wrap{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;}
+    .deliv-icon-wrap::before{content:'';position:absolute;inset:0;border:1px solid rgba(245,158,11,.25);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:rgba(245,158,11,.04);}
+    .deliv-title{font-family:var(--fh);font-size:.78rem;font-weight:700;margin-bottom:4px;}
+    .deliv-desc{font-size:.85rem;color:var(--t2);line-height:1.6;}
+
+    .faq-list{display:flex;flex-direction:column;gap:2px;}
+    .faq-item{background:var(--bg-card);border-left:2px solid transparent;cursor:pointer;}
+    .faq-item.open{border-left-color:var(--gold);}
+    .faq-q{padding:20px 24px;font-family:var(--fh);font-size:.82rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+    .faq-toggle{font-family:var(--fm);font-size:1rem;color:var(--gold);transition:transform .3s;flex-shrink:0;}
+    .faq-item.open .faq-toggle{transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 24px;}
+    .faq-item.open .faq-a{max-height:250px;padding:0 24px 20px;}
+    .faq-a p{font-size:.9rem;color:var(--t2);line-height:1.7;}
+
+    .final-cta{padding:80px 0;}
+    .cta-box{border:1px solid rgba(245,158,11,.15);background:radial-gradient(ellipse at 50% 100%,rgba(245,158,11,.05) 0%,transparent 70%);padding:64px 48px;text-align:center;position:relative;clip-path:polygon(20px 0%,calc(100% - 20px) 0%,100% 20px,100% calc(100% - 20px),calc(100% - 20px) 100%,20px 100%,0% calc(100% - 20px),0% 20px);}
+    .corner{position:absolute;width:24px;height:24px;}
+    .c-tl{top:0;left:0;border-top:2px solid var(--gold);border-left:2px solid var(--gold);}
+    .c-tr{top:0;right:0;border-top:2px solid var(--gold);border-right:2px solid var(--gold);}
+    .c-bl{bottom:0;left:0;border-bottom:2px solid var(--cyan);border-left:2px solid var(--cyan);}
+    .c-br{bottom:0;right:0;border-bottom:2px solid var(--cyan);border-right:2px solid var(--cyan);}
+    .cta-price-big{font-family:var(--fh);font-size:4rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--mag));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+    .cta-price-label{font-family:var(--fm);font-size:11px;color:var(--t3);letter-spacing:.1em;margin-bottom:4px;}
+    .cta-price-sub{font-family:var(--fm);font-size:.8rem;color:var(--t3);margin-top:4px;}
+    .cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:32px;}
+    .cta-note{font-family:var(--fm);font-size:.75rem;color:var(--t3);margin-top:20px;}
+    footer{border-top:1px solid rgba(0,255,245,.06);padding:28px;text-align:center;position:relative;}
+    footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);}
+    .fl{display:flex;justify-content:center;gap:28px;margin-bottom:12px;flex-wrap:wrap;}
+    .fl a{font-family:var(--fm);font-size:.72rem;color:var(--t3);}.fl a:hover{color:var(--cyan);}
+    .fc{font-family:var(--fm);font-size:.7rem;color:var(--t3);}
+    .fade-up{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1);}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:900px){.hero-layout{grid-template-columns:1fr;}.features-grid{grid-template-columns:repeat(2,1fr);}.country-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:600px){.features-grid{grid-template-columns:1fr;}.deliverables{grid-template-columns:1fr;}.country-grid{grid-template-columns:repeat(2,1fr);}.cta-box{padding:40px 24px;}.cta-price-big{font-size:3rem;}}
+  </style>
+</head>
+<body>
+  <nav><div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="../logo.png" alt="Nexova" class="nav-logo-img"/>NEXOVA</a>
+    <a href="/#products" class="nav-back">← ALL PRODUCTS</a>
+    <a href="https://wa.me/60165484979?text=Hi,%20I'd%20like%20to%20purchase%20the%20SEA%20E-Commerce%20Suite%20(RM999)" target="_blank" class="nav-buy">BUY NOW — RM999</a>
+  </div></nav>
+
+  <section class="hero">
+    <div class="hero-orb orb1"></div><div class="hero-orb orb2"></div>
+    <div class="wrap">
+      <div class="hero-layout">
+        <div>
+          <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/#products">Products</a><span>/</span><span style="color:var(--t1)">SEA E-Commerce Suite</span></div>
+          <div class="badge-row">
+            <span class="badge" style="color:var(--gold);border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.06);">● AVAILABLE NOW</span>
+            <span class="badge" style="color:var(--cyan);border-color:rgba(0,255,245,.2);background:rgba(0,255,245,.04);">FULL SOURCE CODE</span>
+            <span class="badge" style="color:var(--purple);border-color:rgba(139,92,246,.2);background:rgba(139,92,246,.04);">5 COUNTRIES</span>
+          </div>
+          <h1>SEA<br/><span class="h1a">E-COMMERCE SUITE</span></h1>
+          <p class="hero-tagline">A production-ready Next.js online store built for Southeast Asia — with native payment support for Malaysia, Indonesia, Thailand, Singapore and Taiwan out of the box.</p>
+          <div class="quick-stats">
+            <div><div class="qs-val">5</div><div class="qs-lab">Countries</div></div>
+            <div><div class="qs-val">Next.js</div><div class="qs-lab">Framework</div></div>
+            <div><div class="qs-val">1-Click</div><div class="qs-lab">Vercel Deploy</div></div>
+            <div><div class="qs-val">SEO</div><div class="qs-lab">Optimised</div></div>
+          </div>
+          <div class="hero-actions">
+            <a href="https://wa.me/60165484979?text=Hi,%20I'd%20like%20to%20purchase%20the%20SEA%20E-Commerce%20Suite%20(RM999)" target="_blank" class="btn-primary">GET IT NOW — RM999 →</a>
+            <a href="#features" class="btn-ghost">SEE ALL FEATURES</a>
+          </div>
+        </div>
+
+        <!-- Store Mockup -->
+        <div>
+          <div class="store-mockup">
+            <div class="store-bar">
+              <div class="store-dots"><div class="sdot" style="background:rgba(255,80,80,.6)"></div><div class="sdot" style="background:rgba(255,200,0,.6)"></div><div class="sdot" style="background:rgba(0,200,80,.6)"></div></div>
+              <div class="store-url">yourstore.com</div>
+            </div>
+            <div class="store-nav">
+              <div class="store-brand">MYSTORE</div>
+              <div class="store-menu">
+                <div class="store-menu-item">Shop</div>
+                <div class="store-menu-item">About</div>
+                <div class="store-menu-item">🛒 2</div>
+              </div>
+            </div>
+            <div class="store-hero-band">
+              <div class="store-hero-title">SUMMER COLLECTION 2026</div>
+              <div class="store-hero-sub">Free shipping above RM100 · MY / ID / TH / SG / TW</div>
+              <div class="store-hero-btn">SHOP NOW</div>
+            </div>
+            <div class="store-products">
+              <div class="store-prod"><div class="store-prod-img">👕</div><div class="store-prod-info"><div class="store-prod-name">Classic Tee</div><div class="store-prod-price">RM 59</div></div><button class="store-prod-btn">Add to Cart</button></div>
+              <div class="store-prod"><div class="store-prod-img">👟</div><div class="store-prod-info"><div class="store-prod-name">Sneaker Pro</div><div class="store-prod-price">RM 199</div></div><button class="store-prod-btn">Add to Cart</button></div>
+              <div class="store-prod"><div class="store-prod-img">🎒</div><div class="store-prod-info"><div class="store-prod-name">Day Pack</div><div class="store-prod-price">RM 149</div></div><button class="store-prod-btn">Add to Cart</button></div>
+            </div>
+            <div class="price-card">
+              <div class="price-label">// ONE-TIME PURCHASE</div>
+              <div class="price-row"><span class="price-rm">RM</span><span class="price-amt">999</span><span class="price-once"> · one-time</span></div>
+              <div class="pi"><span class="pi-check">[✓]</span>Full Next.js source code</div>
+              <div class="pi"><span class="pi-check">[✓]</span>5-country payment integration</div>
+              <div class="pi"><span class="pi-check">[✓]</span>One-click Vercel deployment</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENT COUNTRIES -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="sec-tag">Multi-Country Payment Support</div>
+      <h2 class="sec-title">SELL ACROSS <span style="color:var(--gold)">SOUTHEAST ASIA</span></h2>
+      <p class="sec-sub">Pre-integrated payment methods for every major SEA market. No additional dev work required.</p>
+      <div class="country-grid">
+        <div class="country-card fade-up"><div class="country-flag">🇲🇾</div><div class="country-name">Malaysia</div><div class="country-methods"><div class="cmethod">FPX Banking</div><div class="cmethod">Touch 'n Go</div><div class="cmethod">GrabPay</div><div class="cmethod">Billplz</div></div></div>
+        <div class="country-card fade-up"><div class="country-flag">🇮🇩</div><div class="country-name">Indonesia</div><div class="country-methods"><div class="cmethod">GoPay</div><div class="cmethod">OVO</div><div class="cmethod">Dana</div><div class="cmethod">Midtrans</div></div></div>
+        <div class="country-card fade-up"><div class="country-flag">🇹🇭</div><div class="country-name">Thailand</div><div class="country-methods"><div class="cmethod">PromptPay</div><div class="cmethod">TrueMoney</div><div class="cmethod">Omise</div></div></div>
+        <div class="country-card fade-up"><div class="country-flag">🇸🇬</div><div class="country-name">Singapore</div><div class="country-methods"><div class="cmethod">PayNow</div><div class="cmethod">GrabPay SG</div><div class="cmethod">Stripe SG</div></div></div>
+        <div class="country-card fade-up"><div class="country-flag">🇹🇼</div><div class="country-name">Taiwan</div><div class="country-methods"><div class="cmethod">LINE Pay</div><div class="cmethod">ECPay</div><div class="cmethod">ATM Transfer</div></div></div>
+      </div>
+
+      <div class="sec-tag">Core Features</div>
+      <h2 class="sec-title">EVERYTHING YOUR <span style="color:var(--gold)">STORE NEEDS</span></h2>
+      <p class="sec-sub" style="margin-bottom:32px;">Built with Next.js 14, Tailwind CSS, and a Headless CMS — production-ready from day one.</p>
+      <div class="features-grid">
+        <div class="feat fade-up">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#f59e0b" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="feat-title">Mobile-First Responsive</div>
+          <div class="feat-desc">Pixel-perfect on all screen sizes. Built mobile-first — because 80% of SEA shoppers buy on their phones.</div>
+        </div>
+        <div class="feat fade-up">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="1" y="3" width="22" height="15" rx="2" stroke="#f59e0b" stroke-width="1.5"/><path d="M1 9h22" stroke="#f59e0b" stroke-width="1.5" opacity=".5"/><circle cx="5" cy="13" r="1.5" fill="#f59e0b" opacity=".6"/></svg>
+          <div class="feat-title">Multi-Currency Checkout</div>
+          <div class="feat-desc">Prices auto-display in MYR, IDR, THB, SGD, or TWD based on the visitor's country. One cart, multiple currencies.</div>
+        </div>
+        <div class="feat fade-up">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#f59e0b" stroke-width="1.5"/><path d="M16 3H8L6 7h12l-2-4z" stroke="#f59e0b" stroke-width="1.5" opacity=".5"/></svg>
+          <div class="feat-title">Inventory Management</div>
+          <div class="feat-desc">Track stock levels, set low-stock alerts, manage variants (size, colour), and auto-hide sold-out products.</div>
+        </div>
+        <div class="feat fade-up">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="#f59e0b" stroke-width="1.5"/><path d="M21 21l-4.35-4.35" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="feat-title">SEO Optimised</div>
+          <div class="feat-desc">Server-side rendering with Next.js means your products are indexed by Google. Auto-generated sitemap and meta tags.</div>
+        </div>
+        <div class="feat fade-up">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#f59e0b" stroke-width="1.5"/><polyline points="9 22 9 12 15 12 15 22" stroke="#f59e0b" stroke-width="1.5"/></svg>
+          <div class="feat-title">Admin Dashboard</div>
+          <div class="feat-desc">Manage products, orders, customers, discounts, and view sales analytics — all from a secure web dashboard.</div>
+        </div>
+        <div class="feat fade-up">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/><polyline points="17 6 23 6 23 12" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="feat-title">One-Click Vercel Deploy</div>
+          <div class="feat-desc">Deploy to a global CDN with one click. Auto-HTTPS, custom domain support, and instant updates on every code push.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH SPECS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-tag">Technical Details</div>
+      <h2 class="sec-title">TECH <span style="color:var(--gold)">SPECIFICATIONS</span></h2>
+      <p class="sec-sub" style="margin-bottom:32px;">Modern stack — built to scale from day one.</p>
+      <div class="spec-grid">
+        <div class="spec-row"><div class="spec-key">// Framework</div><div class="spec-val"><span class="tag">Next.js 14</span><span class="tag">React 18</span></div></div>
+        <div class="spec-row"><div class="spec-key">// Styling</div><div class="spec-val"><span class="tag">Tailwind CSS</span></div></div>
+        <div class="spec-row"><div class="spec-key">// Database</div><div class="spec-val"><span class="tag">PostgreSQL</span><span class="tag">Prisma ORM</span></div></div>
+        <div class="spec-row"><div class="spec-key">// Payments</div><div class="spec-val"><span class="tag">Stripe</span><span class="tag">Billplz</span><span class="tag">Midtrans</span></div></div>
+        <div class="spec-row"><div class="spec-key">// Auth</div><div class="spec-val"><span class="tag">NextAuth.js</span></div></div>
+        <div class="spec-row"><div class="spec-key">// Deployment</div><div class="spec-val"><span class="tag">Vercel</span><span class="tag">Railway (DB)</span></div></div>
+        <div class="spec-row"><div class="spec-key">// Language</div><div class="spec-val"><span class="tag">TypeScript</span></div></div>
+        <div class="spec-row"><div class="spec-key">// Images</div><div class="spec-val"><span class="tag">Cloudinary</span><span class="tag">Next/Image</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERABLES -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-tag">Package Contents</div>
+      <h2 class="sec-title">WHAT YOU <span style="color:var(--gold)">RECEIVE</span></h2>
+      <p class="sec-sub">Everything to launch your online store — delivered within 24 hours.</p>
+      <div class="deliverables">
+        <div class="deliv-item fade-up"><div class="deliv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polyline points="16 18 22 12 16 6" stroke="#f59e0b" stroke-width="1.5"/><polyline points="8 6 2 12 8 18" stroke="#f59e0b" stroke-width="1.5"/></svg></div><div><div class="deliv-title">Full Next.js Source Code</div><div class="deliv-desc">Complete TypeScript codebase — storefront, admin dashboard, API routes, and database schema. You own everything.</div></div></div>
+        <div class="deliv-item fade-up"><div class="deliv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="1" y="3" width="22" height="15" rx="2" stroke="#f59e0b" stroke-width="1.5"/><path d="M1 9h22" stroke="#f59e0b" stroke-width="1.5" opacity=".5"/></svg></div><div><div class="deliv-title">5-Country Payment Config</div><div class="deliv-desc">Pre-built payment gateway integrations for MY, ID, TH, SG, TW — just add your API keys and go live.</div></div></div>
+        <div class="deliv-item fade-up"><div class="deliv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8L14 2z" stroke="#f59e0b" stroke-width="1.5"/><polyline points="14 2 14 8 20 8" stroke="#f59e0b" stroke-width="1.5"/></svg></div><div><div class="deliv-title">Full Setup Documentation</div><div class="deliv-desc">Step-by-step guide for local development, database setup, payment config, and Vercel deployment.</div></div></div>
+        <div class="deliv-item fade-up"><div class="deliv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#f59e0b" stroke-width="1.5"/></svg></div><div><div class="deliv-title">30-Day WhatsApp Support</div><div class="deliv-desc">Developer support for setup questions, environment configuration, and troubleshooting during your first 30 days.</div></div></div>
+        <div class="deliv-item fade-up"><div class="deliv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#f59e0b" stroke-width="1.5"/></svg></div><div><div class="deliv-title">Free Bug-Fix Updates (6 months)</div><div class="deliv-desc">If a payment gateway API changes and breaks something, we push a fix and you get it free for 6 months.</div></div></div>
+        <div class="deliv-item fade-up"><div class="deliv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#f59e0b" stroke-width="1.5"/><path d="M3 9h18M9 21V9" stroke="#f59e0b" stroke-width="1.5" opacity=".5"/></svg></div><div><div class="deliv-title">Sample Product Data</div><div class="deliv-desc">Pre-loaded with sample products, categories, and orders so you can see a fully working store immediately.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-tag">Common Questions</div>
+      <h2 class="sec-title">FAQ</h2>
+      <p class="sec-sub" style="margin-bottom:32px;"></p>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q">Do I need a developer to set this up?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Basic setup (deploying to Vercel, connecting payment keys) requires following the step-by-step guide — similar difficulty to setting up a WordPress site. Customising the design or adding features does require basic Next.js knowledge. Our 30-day support covers the initial setup process.</p></div></div>
+        <div class="faq-item"><div class="faq-q">How much does hosting cost after purchase?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Vercel's free Hobby plan covers small stores. For commercial use, Vercel Pro is USD20/month. Database hosting via Railway starts at USD5/month. Total running cost is typically USD25–30/month — far cheaper than Shopify's RM200+/month plans.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Can I sell both physical and digital products?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Yes — the suite supports physical products (with shipping calculation), digital downloads (with secure delivery links), and service bookings. Product types are configured in the admin dashboard.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Can I add more countries later?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Yes. The payment integration layer is modular — adding a new country's payment gateway means adding a new integration module. Documentation for adding custom gateways is included.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Is this better than Shopify or WooCommerce?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Different trade-offs. Shopify is simpler but costs RM200–800/month forever. WooCommerce requires WordPress hosting and plugins. This suite is a one-time purchase with full code ownership, better performance via Next.js SSR, and native SEA payment support that neither platform handles well out of the box.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="final-cta"><div class="wrap"><div class="cta-box">
+    <div class="corner c-tl"></div><div class="corner c-tr"></div><div class="corner c-bl"></div><div class="corner c-br"></div>
+    <div class="sec-tag" style="justify-content:center;margin-bottom:12px;">Launch Your Store</div>
+    <h2 style="font-family:var(--fh);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;margin-bottom:8px;">STOP PAYING<br/><span style="color:var(--gold)">MONTHLY FEES.</span></h2>
+    <p style="color:var(--t2);max-width:460px;margin:0 auto;font-size:.95rem;">One payment. Full ownership. Sell across 5 countries from day one — without RM200/month Shopify bills eating into your margin.</p>
+    <div style="margin:24px 0 0;"><div class="cta-price-label">// ONE-TIME PRICE</div><div class="cta-price-big">RM 999</div><div class="cta-price-sub">Full source code · 5-country payments · Admin dashboard · 30-day support</div></div>
+    <div class="cta-actions"><a href="https://wa.me/60165484979?text=Hi,%20I'd%20like%20to%20purchase%20the%20SEA%20E-Commerce%20Suite%20(RM999)" target="_blank" class="btn-primary">BUY NOW VIA WHATSAPP →</a></div>
+    <div class="cta-note">🛡️ Secure payment · SSM Registered (CA0417238-V) · 7-day refund guarantee</div>
+  </div></div></div>
+
+  <footer>
+    <div class="fl"><a href="/">HOME</a><a href="/#products">PRODUCTS</a><a href="/privacy">PRIVACY</a><a href="/terms">TERMS</a><a href="/refund">REFUND</a></div>
+    <div class="fc">© 2026 NEXOVA DIGITAL SOLUTION (CA0417238-V) · SHAH ALAM, MALAYSIA</div>
+  </footer>
+  <script>
+    const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:.08});
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+    document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
+  </script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Industry Website Templates | Nexova Digital</title>
+  <meta name="description" content="Mobile-first, SEO-ready HTML/CSS website templates for F&B, retail and service businesses. Fully customisable source code. From RM299."/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#030308;--bg-card:#0d0d1a;--cyan:#00fff5;--mag:#ff00aa;--purple:#8b5cf6;--green:#00ff88;--t1:#e8e8f8;--t2:#8888aa;--t3:#44445a;--fh:'Orbitron',monospace;--fb:'Rajdhani',sans-serif;--fm:'Share Tech Mono',monospace;}
+    *{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--t1);font-family:var(--fb);font-size:17px;line-height:1.7;overflow-x:hidden;}
+    body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,255,245,.010) 2px,rgba(0,255,245,.010) 4px);pointer-events:none;z-index:900;}
+    a{color:var(--cyan);text-decoration:none;}a:hover{color:var(--mag);}
+    nav{background:rgba(3,3,8,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(139,92,246,.15);padding:14px 0;position:sticky;top:0;z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-family:var(--fh);font-size:.85rem;font-weight:800;letter-spacing:.08em;display:flex;align-items:center;gap:10px;color:var(--t1);}
+    .nav-logo-img{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(0,255,245,.7));}
+    .nav-back{font-family:var(--fm);font-size:.75rem;color:var(--t2);transition:color .2s;}
+    .nav-back:hover{color:var(--cyan);}
+    .nav-buy{font-family:var(--fh);font-size:.65rem;font-weight:700;letter-spacing:.1em;background:linear-gradient(135deg,var(--purple),var(--cyan));color:#000;padding:10px 20px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all .2s;box-shadow:0 0 20px rgba(139,92,246,.3);}
+    .nav-buy:hover{box-shadow:0 0 30px rgba(139,92,246,.5);color:#000;}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
+    .hero{padding:64px 0 80px;position:relative;overflow:hidden;border-bottom:1px solid rgba(139,92,246,.08);}
+    .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(139,92,246,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.03) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 90% 90% at 30% 50%,black,transparent);}
+    .hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+    .orb1{width:400px;height:400px;background:var(--purple);top:-100px;left:-80px;opacity:.06;}
+    .orb2{width:300px;height:300px;background:var(--cyan);bottom:0;right:10%;opacity:.04;}
+    .hero-layout{display:grid;grid-template-columns:1fr 460px;gap:56px;align-items:center;position:relative;z-index:1;}
+    .breadcrumb{font-family:var(--fm);font-size:11px;color:var(--t3);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+    .breadcrumb a{color:var(--t2);}.breadcrumb a:hover{color:var(--cyan);}
+    .badge-row{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+    .badge{font-family:var(--fm);font-size:10px;letter-spacing:.1em;padding:4px 12px;border:1px solid;}
+    h1{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;margin-bottom:16px;}
+    .h1a{color:var(--purple);text-shadow:0 0 20px rgba(139,92,246,.5);}
+    .hero-tagline{font-size:1.1rem;color:var(--t2);line-height:1.8;max-width:500px;margin-bottom:32px;border-left:2px solid rgba(139,92,246,.3);padding-left:16px;}
+    .quick-stats{display:flex;gap:28px;margin-bottom:36px;flex-wrap:wrap;}
+    .qs-val{font-family:var(--fh);font-size:1.4rem;font-weight:900;color:var(--purple);text-shadow:0 0 12px rgba(139,92,246,.4);line-height:1;}
+    .qs-lab{font-family:var(--fm);font-size:10px;color:var(--t3);letter-spacing:.08em;margin-top:4px;}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:.7rem;font-weight:700;letter-spacing:.12em;padding:16px 32px;background:linear-gradient(135deg,var(--purple),var(--cyan));color:#000;clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);transition:all .25s;box-shadow:0 0 30px rgba(139,92,246,.25);}
+    .btn-primary:hover{box-shadow:0 0 50px rgba(139,92,246,.5);transform:translateY(-2px);color:#000;}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:.7rem;font-weight:700;letter-spacing:.12em;padding:16px 28px;background:transparent;color:var(--cyan);border:1px solid rgba(0,255,245,.3);clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);transition:all .25s;}
+    .btn-ghost:hover{background:rgba(0,255,245,.08);color:var(--cyan);}
+
+    /* Template preview grid */
+    .preview-stack{position:relative;}
+    .tpl-card{background:var(--bg-card);border:1px solid rgba(139,92,246,.2);overflow:hidden;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);box-shadow:0 0 40px rgba(139,92,246,.07),0 30px 60px rgba(0,0,0,.5);}
+    .tpl-bar{background:rgba(0,0,0,.6);padding:8px 12px;display:flex;align-items:center;gap:8px;}
+    .tpl-dots{display:flex;gap:4px;}
+    .tdot{width:7px;height:7px;border-radius:50%;}
+    .tpl-label{font-family:var(--fm);font-size:9px;color:var(--t3);margin-left:4px;}
+
+    /* F&B Template preview */
+    .fnb-nav{background:#1a0a00;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,140,0,.1);}
+    .fnb-brand{font-family:var(--fh);font-size:.7rem;color:#f59e0b;letter-spacing:.1em;}
+    .fnb-hero{background:linear-gradient(135deg,#0d0500,#1a0800);padding:24px 16px;text-align:center;position:relative;overflow:hidden;}
+    .fnb-hero::before{content:'🍜';position:absolute;font-size:80px;opacity:.06;right:-10px;top:-10px;}
+    .fnb-title{font-family:var(--fh);font-size:.8rem;font-weight:700;color:#f59e0b;margin-bottom:4px;}
+    .fnb-sub{font-family:var(--fm);font-size:.65rem;color:rgba(255,255,255,.4);margin-bottom:14px;}
+    .fnb-btn{display:inline-block;background:#f59e0b;color:#000;font-family:var(--fh);font-size:.6rem;font-weight:700;padding:6px 16px;}
+    .fnb-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:12px;}
+    .fnb-item{background:rgba(0,0,0,.3);border:1px solid rgba(255,140,0,.1);}
+    .fnb-img{height:40px;background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(0,0,0,.2));display:flex;align-items:center;justify-content:center;font-size:20px;}
+    .fnb-info{padding:5px 6px;}
+    .fnb-name{font-family:var(--fm);font-size:7px;color:rgba(255,255,255,.6);}
+    .fnb-price{font-family:var(--fh);font-size:8px;color:#f59e0b;}
+
+    .price-card{background:rgba(0,0,0,.5);border-top:1px solid rgba(139,92,246,.15);padding:20px 24px;}
+    .pricing-tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px;}
+    .tier{background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.15);padding:10px;text-align:center;}
+    .tier.featured{background:rgba(139,92,246,.12);border-color:rgba(139,92,246,.3);}
+    .tier-name{font-family:var(--fm);font-size:8px;color:var(--t3);margin-bottom:2px;}
+    .tier-price{font-family:var(--fh);font-size:1rem;font-weight:700;color:var(--purple);}
+    .tier-desc{font-family:var(--fm);font-size:7px;color:var(--t3);margin-top:2px;}
+    .pi{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--t2);margin-bottom:4px;}
+    .pi-check{font-family:var(--fm);font-size:10px;color:var(--green);}
+
+    .section{padding:80px 0;border-top:1px solid rgba(0,255,245,.04);}
+    .sec-tag{font-family:var(--fm);font-size:11px;color:var(--purple);letter-spacing:.2em;display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+    .sec-tag::before{content:'//';color:var(--t3);}
+    .sec-title{font-family:var(--fh);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:12px;}
+    .sec-sub{font-size:.95rem;color:var(--t2);max-width:560px;line-height:1.8;margin-bottom:48px;}
+
+    /* Template categories */
+    .tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(139,92,246,.04);}
+    .tpl-cat{background:var(--bg-card);padding:0;overflow:hidden;position:relative;transition:all .3s;}
+    .tpl-cat:hover{transform:translateY(-2px);}
+    .tpl-cat::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--purple),transparent);opacity:0;transition:opacity .3s;}
+    .tpl-cat:hover::after{opacity:1;}
+    .tpl-preview{height:120px;position:relative;overflow:hidden;}
+    .tpl-preview-fnb{background:linear-gradient(135deg,#0d0500,#1a0800);display:flex;flex-direction:column;}
+    .tpl-preview-retail{background:linear-gradient(135deg,#0a0a18,#0d0820);display:flex;flex-direction:column;}
+    .tpl-preview-svc{background:linear-gradient(135deg,#030d08,#051208);display:flex;flex-direction:column;}
+    .tpl-preview-mini-nav{height:18px;padding:0 10px;display:flex;align-items:center;justify-content:space-between;font-family:var(--fm);font-size:7px;}
+    .tpl-preview-hero{flex:1;display:flex;align-items:center;padding:8px 10px;}
+    .tpl-preview-title{font-family:var(--fh);font-size:.55rem;font-weight:700;line-height:1.2;}
+    .tpl-cat-info{padding:20px;}
+    .tpl-cat-name{font-family:var(--fh);font-size:.82rem;font-weight:700;letter-spacing:.04em;margin-bottom:6px;}
+    .tpl-cat-desc{font-size:.85rem;color:var(--t2);line-height:1.6;margin-bottom:12px;}
+    .tpl-cat-features{display:flex;flex-wrap:wrap;gap:6px;}
+    .tpl-feature-tag{font-family:var(--fm);font-size:9px;color:var(--purple);background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.15);padding:3px 8px;}
+
+    /* What's included */
+    .included-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(139,92,246,.04);}
+    .incl-item{background:var(--bg-card);padding:28px;position:relative;}
+    .incl-item::before{content:'';position:absolute;top:0;left:0;bottom:0;width:2px;background:linear-gradient(var(--purple),var(--cyan));opacity:.3;}
+    .incl-icon{margin-bottom:14px;}
+    .incl-title{font-family:var(--fh);font-size:.78rem;font-weight:700;margin-bottom:8px;}
+    .incl-desc{font-size:.85rem;color:var(--t2);line-height:1.6;}
+
+    .faq-list{display:flex;flex-direction:column;gap:2px;}
+    .faq-item{background:var(--bg-card);border-left:2px solid transparent;cursor:pointer;}
+    .faq-item.open{border-left-color:var(--purple);}
+    .faq-q{padding:20px 24px;font-family:var(--fh);font-size:.82rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+    .faq-toggle{font-family:var(--fm);font-size:1rem;color:var(--purple);transition:transform .3s;flex-shrink:0;}
+    .faq-item.open .faq-toggle{transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 24px;}
+    .faq-item.open .faq-a{max-height:200px;padding:0 24px 20px;}
+    .faq-a p{font-size:.9rem;color:var(--t2);line-height:1.7;}
+
+    .final-cta{padding:80px 0;}
+    .cta-box{border:1px solid rgba(139,92,246,.15);background:radial-gradient(ellipse at 50% 100%,rgba(139,92,246,.06) 0%,transparent 70%);padding:64px 48px;text-align:center;position:relative;clip-path:polygon(20px 0%,calc(100% - 20px) 0%,100% 20px,100% calc(100% - 20px),calc(100% - 20px) 100%,20px 100%,0% calc(100% - 20px),0% 20px);}
+    .corner{position:absolute;width:24px;height:24px;}
+    .c-tl{top:0;left:0;border-top:2px solid var(--purple);border-left:2px solid var(--purple);}
+    .c-tr{top:0;right:0;border-top:2px solid var(--purple);border-right:2px solid var(--purple);}
+    .c-bl{bottom:0;left:0;border-bottom:2px solid var(--cyan);border-left:2px solid var(--cyan);}
+    .c-br{bottom:0;right:0;border-bottom:2px solid var(--cyan);border-right:2px solid var(--cyan);}
+    .cta-price-big{font-family:var(--fh);font-size:4rem;font-weight:900;background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+    .cta-price-label{font-family:var(--fm);font-size:11px;color:var(--t3);letter-spacing:.1em;margin-bottom:4px;}
+    .cta-price-sub{font-family:var(--fm);font-size:.8rem;color:var(--t3);margin-top:4px;}
+    .cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:32px;}
+    .cta-note{font-family:var(--fm);font-size:.75rem;color:var(--t3);margin-top:20px;}
+    footer{border-top:1px solid rgba(0,255,245,.06);padding:28px;text-align:center;position:relative;}
+    footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);}
+    .fl{display:flex;justify-content:center;gap:28px;margin-bottom:12px;flex-wrap:wrap;}
+    .fl a{font-family:var(--fm);font-size:.72rem;color:var(--t3);}.fl a:hover{color:var(--cyan);}
+    .fc{font-family:var(--fm);font-size:.7rem;color:var(--t3);}
+    .fade-up{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1);}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:900px){.hero-layout{grid-template-columns:1fr;}.tpl-grid{grid-template-columns:1fr;}.included-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:600px){.included-grid{grid-template-columns:1fr;}.cta-box{padding:40px 24px;}.cta-price-big{font-size:3rem;}.pricing-tiers{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <nav><div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="../logo.png" alt="Nexova" class="nav-logo-img"/>NEXOVA</a>
+    <a href="/#products" class="nav-back">← ALL PRODUCTS</a>
+    <a href="https://wa.me/60165484979?text=Hi,%20I'd%20like%20to%20purchase%20Website%20Templates" target="_blank" class="nav-buy">GET TEMPLATES — FROM RM299</a>
+  </div></nav>
+
+  <section class="hero">
+    <div class="hero-orb orb1"></div><div class="hero-orb orb2"></div>
+    <div class="wrap">
+      <div class="hero-layout">
+        <div>
+          <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/#products">Products</a><span>/</span><span style="color:var(--t1)">Website Templates</span></div>
+          <div class="badge-row">
+            <span class="badge" style="color:var(--green);border-color:rgba(0,255,136,.3);background:rgba(0,255,136,.06);">● AVAILABLE NOW</span>
+            <span class="badge" style="color:var(--cyan);border-color:rgba(0,255,245,.2);background:rgba(0,255,245,.04);">HTML/CSS SOURCE</span>
+            <span class="badge" style="color:var(--purple);border-color:rgba(139,92,246,.2);background:rgba(139,92,246,.04);">3 INDUSTRIES</span>
+          </div>
+          <h1>INDUSTRY<br/><span class="h1a">WEBSITE TEMPLATES</span></h1>
+          <p class="hero-tagline">Mobile-first, SEO-ready website templates built specifically for Malaysian F&B, retail, and service businesses. Full HTML/CSS/JS source — own it, modify it, launch it.</p>
+          <div class="quick-stats">
+            <div><div class="qs-val">3</div><div class="qs-lab">Industry Templates</div></div>
+            <div><div class="qs-val">Mobile</div><div class="qs-lab">First Design</div></div>
+            <div><div class="qs-val">SEO</div><div class="qs-lab">Ready</div></div>
+            <div><div class="qs-val">BM/EN</div><div class="qs-lab">Bilingual Ready</div></div>
+          </div>
+          <div class="hero-actions">
+            <a href="https://wa.me/60165484979?text=Hi,%20I'd%20like%20to%20purchase%20Website%20Templates" target="_blank" class="btn-primary">GET TEMPLATES — FROM RM299 →</a>
+            <a href="#templates" class="btn-ghost">VIEW ALL TEMPLATES</a>
+          </div>
+        </div>
+
+        <!-- Template Preview -->
+        <div>
+          <div class="tpl-card">
+            <div class="tpl-bar">
+              <div class="tpl-dots"><div class="tdot" style="background:rgba(255,80,80,.6)"></div><div class="tdot" style="background:rgba(255,200,0,.6)"></div><div class="tdot" style="background:rgba(0,200,80,.6)"></div></div>
+              <div class="tpl-label">F&B Template Preview</div>
+            </div>
+            <div class="fnb-nav">
+              <div class="fnb-brand">WARUNG DIGITAL</div>
+              <div style="font-family:var(--fm);font-size:8px;color:rgba(255,140,0,.5);">Menu | Order | Contact</div>
+            </div>
+            <div class="fnb-hero">
+              <div class="fnb-title">AUTHENTIC NASI LEMAK</div>
+              <div class="fnb-sub">Shah Alam · Open 7AM–10PM · Delivery Available</div>
+              <div class="fnb-btn">ORDER NOW</div>
+            </div>
+            <div class="fnb-menu">
+              <div class="fnb-item"><div class="fnb-img">🍛</div><div class="fnb-info"><div class="fnb-name">Nasi Lemak Set</div><div class="fnb-price">RM8.50</div></div></div>
+              <div class="fnb-item"><div class="fnb-img">🥤</div><div class="fnb-info"><div class="fnb-name">Teh Tarik</div><div class="fnb-price">RM3.00</div></div></div>
+              <div class="fnb-item"><div class="fnb-img">🍗</div><div class="fnb-info"><div class="fnb-name">Ayam Goreng</div><div class="fnb-price">RM6.00</div></div></div>
+            </div>
+            <div class="price-card">
+              <div style="font-family:var(--fm);font-size:10px;color:var(--t3);margin-bottom:8px;">// CHOOSE YOUR PACKAGE</div>
+              <div class="pricing-tiers">
+                <div class="tier"><div class="tier-name">SINGLE</div><div class="tier-price">RM299</div><div class="tier-desc">1 template</div></div>
+                <div class="tier featured"><div class="tier-name">ALL 3</div><div class="tier-price">RM599</div><div class="tier-desc">Best value</div></div>
+              </div>
+              <div class="pi"><span class="pi-check">[✓]</span>Full HTML/CSS/JS source</div>
+              <div class="pi"><span class="pi-check">[✓]</span>No monthly fees</div>
+              <div class="pi"><span class="pi-check">[✓]</span>Lifetime updates</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPLATES -->
+  <section class="section" id="templates">
+    <div class="wrap">
+      <div class="sec-tag">Available Templates</div>
+      <h2 class="sec-title">3 INDUSTRY <span style="color:var(--purple)">TEMPLATES</span></h2>
+      <p class="sec-sub">Each template is purpose-built for its industry — not a generic theme reskinned. Real sections, real features, real use cases.</p>
+      <div class="tpl-grid">
+        <!-- F&B -->
+        <div class="tpl-cat fade-up">
+          <div class="tpl-preview tpl-preview-fnb">
+            <div class="tpl-preview-mini-nav" style="background:rgba(0,0,0,.3);color:rgba(255,140,0,.6);">
+              <span>🍜 WARUNG PRO</span><span>Menu · Order · Contact</span>
+            </div>
+            <div class="tpl-preview-hero">
+              <div>
+                <div class="tpl-preview-title" style="color:#f59e0b;">AUTHENTIC<br/>MALAYSIAN FOOD</div>
+                <div style="font-family:var(--fm);font-size:.55rem;color:rgba(255,255,255,.3);margin-top:4px;">Shah Alam · Open Daily</div>
+                <div style="background:#f59e0b;color:#000;font-family:var(--fh);font-size:.45rem;font-weight:700;padding:3px 10px;margin-top:8px;display:inline-block;">ORDER NOW</div>
+              </div>
+            </div>
+          </div>
+          <div class="tpl-cat-info">
+            <div class="tpl-cat-name">🍜 F&B Template</div>
+            <div class="tpl-cat-desc">Perfect for restaurants, cafes, warungs, hawker stalls, and food delivery businesses. Includes digital menu, ordering info, and Google Maps integration.</div>
+            <div class="tpl-cat-features">
+              <span class="tpl-feature-tag">Digital Menu</span>
+              <span class="tpl-feature-tag">WhatsApp Order</span>
+              <span class="tpl-feature-tag">Google Maps</span>
+              <span class="tpl-feature-tag">Opening Hours</span>
+              <span class="tpl-feature-tag">Photo Gallery</span>
+              <span class="tpl-feature-tag">Bilingual (BM/EN)</span>
+            </div>
+          </div>
+        </div>
+        <!-- Retail -->
+        <div class="tpl-cat fade-up">
+          <div class="tpl-preview tpl-preview-retail">
+            <div class="tpl-preview-mini-nav" style="background:rgba(0,0,0,.3);color:rgba(139,92,246,.6);">
+              <span>◈ SHOPIFY PRO</span><span>Shop · Cart · About</span>
+            </div>
+            <div class="tpl-preview-hero">
+              <div>
+                <div class="tpl-preview-title" style="color:var(--purple);">NEW ARRIVALS<br/>SUMMER 2026</div>
+                <div style="font-family:var(--fm);font-size:.55rem;color:rgba(255,255,255,.3);margin-top:4px;">Free Shipping Above RM100</div>
+                <div style="background:var(--purple);color:#fff;font-family:var(--fh);font-size:.45rem;font-weight:700;padding:3px 10px;margin-top:8px;display:inline-block;">SHOP NOW</div>
+              </div>
+            </div>
+          </div>
+          <div class="tpl-cat-info">
+            <div class="tpl-cat-name">🛍️ Retail Template</div>
+            <div class="tpl-cat-desc">For boutiques, online shops, fashion, electronics, and product-based businesses. Showcase products beautifully with a clean catalogue layout.</div>
+            <div class="tpl-cat-features">
+              <span class="tpl-feature-tag">Product Catalogue</span>
+              <span class="tpl-feature-tag">Cart (WhatsApp)</span>
+              <span class="tpl-feature-tag">Promotions Banner</span>
+              <span class="tpl-feature-tag">Category Filter</span>
+              <span class="tpl-feature-tag">Contact Form</span>
+              <span class="tpl-feature-tag">Social Links</span>
+            </div>
+          </div>
+        </div>
+        <!-- Service -->
+        <div class="tpl-cat fade-up">
+          <div class="tpl-preview tpl-preview-svc">
+            <div class="tpl-preview-mini-nav" style="background:rgba(0,0,0,.3);color:rgba(0,255,136,.5);">
+              <span>◉ SERVIS PRO</span><span>Services · Book · Contact</span>
+            </div>
+            <div class="tpl-preview-hero">
+              <div>
+                <div class="tpl-preview-title" style="color:var(--green);">PROFESSIONAL<br/>SERVICES YOU CAN TRUST</div>
+                <div style="font-family:var(--fm);font-size:.55rem;color:rgba(255,255,255,.3);margin-top:4px;">Klang Valley · 5★ Rated</div>
+                <div style="background:var(--green);color:#000;font-family:var(--fh);font-size:.45rem;font-weight:700;padding:3px 10px;margin-top:8px;display:inline-block;">BOOK NOW</div>
+              </div>
+            </div>
+          </div>
+          <div class="tpl-cat-info">
+            <div class="tpl-cat-name">💼 Services Template</div>
+            <div class="tpl-cat-desc">For salons, clinics, cleaning, tutoring, repair shops, and any service-based business. Focuses on trust signals, reviews, and easy appointment booking.</div>
+            <div class="tpl-cat-features">
+              <span class="tpl-feature-tag">Services List</span>
+              <span class="tpl-feature-tag">WhatsApp Booking</span>
+              <span class="tpl-feature-tag">Testimonials</span>
+              <span class="tpl-feature-tag">Team Section</span>
+              <span class="tpl-feature-tag">FAQ Section</span>
+              <span class="tpl-feature-tag">Price Table</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUDED IN EVERY TEMPLATE -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-tag">What's Included</div>
+      <h2 class="sec-title">INCLUDED IN <span style="color:var(--purple)">EVERY TEMPLATE</span></h2>
+      <p class="sec-sub" style="margin-bottom:32px;">Features every Malaysian business website needs — already built in.</p>
+      <div class="included-grid">
+        <div class="incl-item fade-up">
+          <div class="incl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="incl-title">Mobile-First Design</div>
+          <div class="incl-desc">Looks perfect on phones, tablets, and desktops. Built mobile-first — because that's where your customers are.</div>
+        </div>
+        <div class="incl-item fade-up">
+          <div class="incl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="#8b5cf6" stroke-width="1.5"/><path d="M21 21l-4.35-4.35" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="incl-title">SEO-Ready Structure</div>
+          <div class="incl-desc">Proper heading hierarchy, meta tags, schema markup, and sitemap.xml included so Google can find your business.</div>
+        </div>
+        <div class="incl-item fade-up">
+          <div class="incl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07" stroke="#8b5cf6" stroke-width="1.5"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967" stroke="#8b5cf6" stroke-width="1.5"/><path d="M4 4l16 16" stroke="#25d366" stroke-width="1.5" opacity=".5"/></svg></div>
+          <div class="incl-title">WhatsApp Integration</div>
+          <div class="incl-desc">Pre-built WhatsApp floating button, click-to-chat order links, and enquiry buttons — connect directly with customers.</div>
+        </div>
+        <div class="incl-item fade-up">
+          <div class="incl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><line x1="16" y1="2" x2="16" y2="6" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div class="incl-title">Google Maps Embed</div>
+          <div class="incl-desc">Interactive map embedded on your contact page. Customers find your location instantly without leaving your site.</div>
+        </div>
+        <div class="incl-item fade-up">
+          <div class="incl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#8b5cf6" stroke-width="1.5"/></svg></div>
+          <div class="incl-title">Fast Load Speed</div>
+          <div class="incl-desc">Optimised CSS, minified JS, and compressed images. Pages load in under 2 seconds — important for SEO and user experience.</div>
+        </div>
+        <div class="incl-item fade-up">
+          <div class="incl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polyline points="16 18 22 12 16 6" stroke="#8b5cf6" stroke-width="1.5"/><polyline points="8 6 2 12 8 18" stroke="#8b5cf6" stroke-width="1.5"/></svg></div>
+          <div class="incl-title">Clean HTML/CSS Source</div>
+          <div class="incl-desc">Well-commented, organised code. Easy to hand off to any developer — or modify yourself with basic HTML knowledge.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-tag">Common Questions</div>
+      <h2 class="sec-title">FAQ</h2>
+      <p class="sec-sub" style="margin-bottom:32px;"></p>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q">Do I need coding knowledge to use these templates?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Basic text and image changes can be made by editing the HTML file directly — it's like editing a Word document with tags. For more significant layout changes, basic HTML/CSS knowledge helps. The templates come with commented code explaining what each section does.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Where do I host the website after purchasing?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Any web hosting works — Netlify and Vercel offer free static site hosting (perfect for these templates). Alternatively, shared hosting providers like Exabytes or Shinjiru Malaysia offer plans from RM5/month. The setup guide covers deployment to both free and paid options.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Can I use one template for multiple businesses?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Each purchase covers one business / domain. If you're an agency building sites for multiple clients, contact us about a multi-use licence — we offer bundled pricing for agencies.</p></div></div>
+        <div class="faq-item"><div class="faq-q">What's the difference between Single (RM299) and All 3 (RM599)?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Single gives you one template of your choice (F&B, Retail, or Services). The RM599 bundle includes all three templates — useful if you have multiple businesses or want to explore different designs before committing to one.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Are updates included?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Yes — future updates to your purchased template(s) are free for life. When we improve the template or fix browser compatibility issues, you get the updated files at no extra cost.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="final-cta"><div class="wrap"><div class="cta-box">
+    <div class="corner c-tl"></div><div class="corner c-tr"></div><div class="corner c-bl"></div><div class="corner c-br"></div>
+    <div class="sec-tag" style="justify-content:center;margin-bottom:12px;">Launch Your Website</div>
+    <h2 style="font-family:var(--fh);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;margin-bottom:8px;">YOUR BUSINESS<br/><span style="color:var(--purple);text-shadow:0 0 20px rgba(139,92,246,.4)">DESERVES A GREAT WEBSITE.</span></h2>
+    <p style="color:var(--t2);max-width:440px;margin:0 auto;font-size:.95rem;">Skip the RM3,000 web agency quote. Get a professional, industry-specific website template and launch this week.</p>
+    <div style="margin:24px 0 0;"><div class="cta-price-label">// STARTING FROM</div><div class="cta-price-big">RM 299</div><div class="cta-price-sub">Single template · Full source code · Lifetime updates · Setup guide included</div></div>
+    <div class="cta-actions">
+      <a href="https://wa.me/60165484979?text=Hi,%20I'd%20like%20to%20purchase%20Website%20Templates%20-%20please%20tell%20me%20more" target="_blank" class="btn-primary">GET TEMPLATES NOW →</a>
+    </div>
+    <div class="cta-note">🛡️ Secure payment · SSM Registered (CA0417238-V) · 7-day refund guarantee</div>
+  </div></div></div>
+
+  <footer>
+    <div class="fl"><a href="/">HOME</a><a href="/#products">PRODUCTS</a><a href="/privacy">PRIVACY</a><a href="/terms">TERMS</a><a href="/refund">REFUND</a></div>
+    <div class="fc">© 2026 NEXOVA DIGITAL SOLUTION (CA0417238-V) · SHAH ALAM, MALAYSIA</div>
+  </footer>
+  <script>
+    const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:.08});
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+    document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
+  </script>
+</body>
+</html>
