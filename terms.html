@@ -1,169 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Terms of Service | Nexova Digital Solution</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --bg: #0a0a0f; --bg-card: #111118; --border: rgba(255,255,255,0.08);
-      --accent: #00e5a0; --text-1: #f0f0f5; --text-2: #9090a8; --text-3: #55556a;
-      --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text-1); font-family: var(--font-body); font-size: 16px; line-height: 1.8; }
-    a { color: var(--accent); text-decoration: none; }
-    nav { background: rgba(10,10,15,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
-    .nav-inner { max-width: 860px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-family: var(--font-head); font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: var(--text-1); }
-    .nav-logo-icon { width: 30px; height: 30px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #000; font-weight: 900; }
-    .nav-back { font-size: 0.88rem; color: var(--text-2); transition: color 0.2s; }
-    .nav-back:hover { color: var(--accent); }
-    .container { max-width: 860px; margin: 0 auto; padding: 64px 24px 96px; }
-    .page-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-    .page-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--accent); }
-    h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
-    .meta { font-size: 0.88rem; color: var(--text-3); margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
-    h2 { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; color: var(--text-1); margin: 40px 0 14px; }
-    h3 { font-size: 1rem; font-weight: 600; color: var(--text-1); margin: 24px 0 10px; }
-    p { color: var(--text-2); margin-bottom: 16px; }
-    ul { color: var(--text-2); padding-left: 20px; margin-bottom: 16px; }
-    ul li { margin-bottom: 8px; }
-    .highlight-box { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
-    .highlight-box p { margin: 0; font-size: 0.92rem; }
-    .warning-box { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-left: 3px solid #ef4444; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
-    .warning-box p { margin: 0; font-size: 0.92rem; color: #fca5a5; }
-    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
-    .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 16px; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.88rem; color: var(--text-2); transition: color 0.2s; }
-    .footer-links a:hover { color: var(--accent); }
-    .footer-copy { font-size: 0.82rem; color: var(--text-3); }
+    :root{--bg:#030308;--bg-card:#0d0d1a;--cyan:#00fff5;--magenta:#ff00aa;--purple:#8b5cf6;--t1:#e8e8f8;--t2:#8888aa;--t3:#44445a;--fh:'Orbitron',monospace;--fb:'Rajdhani',sans-serif;--fm:'Share Tech Mono',monospace;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--t1);font-family:var(--fb);font-size:17px;line-height:1.8;overflow-x:hidden;}
+    body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,255,245,.012) 2px,rgba(0,255,245,.012) 4px);pointer-events:none;z-index:999;}
+    body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,245,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,245,.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,black,transparent);pointer-events:none;}
+    a{color:var(--cyan);text-decoration:none;}a:hover{color:var(--magenta);}
+    nav{background:rgba(3,3,8,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,255,245,.1);padding:16px 0;position:sticky;top:0;z-index:100;}
+    .nav-inner{max-width:860px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-family:var(--fh);font-size:.85rem;font-weight:800;letter-spacing:.08em;display:flex;align-items:center;gap:10px;color:var(--t1);}
+    .nav-logo-img{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(0,255,245,.7));}
+    .nav-back{font-family:var(--fm);font-size:.75rem;color:var(--t2);}
+    .nav-back:hover{color:var(--cyan);}
+    .wrap{max-width:860px;margin:0 auto;padding:60px 28px 96px;position:relative;z-index:1;}
+    .pg-tag{font-family:var(--fm);font-size:11px;color:var(--magenta);letter-spacing:.2em;display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+    .pg-tag::before{content:'//';color:var(--t3);}
+    h1{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;letter-spacing:.02em;margin-bottom:10px;}
+    .h1a{color:var(--cyan);text-shadow:0 0 20px rgba(0,255,245,.4);}
+    .pg-meta{font-family:var(--fm);font-size:.78rem;color:var(--t3);margin-bottom:40px;padding-bottom:28px;border-bottom:1px solid rgba(0,255,245,.08);position:relative;}
+    .pg-meta::after{content:'';position:absolute;bottom:0;left:0;width:100px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent);box-shadow:0 0 8px var(--cyan);}
+    .info-box{background:rgba(0,255,245,.04);border:1px solid rgba(0,255,245,.15);border-left:3px solid var(--cyan);padding:18px 22px;margin-bottom:44px;position:relative;}
+    .info-box::before{content:'[NOTICE]';font-family:var(--fm);font-size:9px;color:var(--cyan);position:absolute;top:-1px;right:14px;background:var(--bg);padding:0 6px;}
+    .info-box p{color:var(--t2);font-size:.92rem;margin:0;}
+    .warn-box{background:rgba(255,0,170,.04);border:1px solid rgba(255,0,170,.2);border-left:3px solid var(--magenta);padding:18px 22px;margin:20px 0;position:relative;}
+    .warn-box::before{content:'[WARNING]';font-family:var(--fm);font-size:9px;color:var(--magenta);position:absolute;top:-1px;right:14px;background:var(--bg);padding:0 6px;}
+    .warn-box p{color:#fca5a5;font-size:.92rem;margin:0;}
+    h2{font-family:var(--fh);font-size:.88rem;font-weight:700;letter-spacing:.06em;margin:40px 0 14px;display:flex;align-items:center;gap:12px;}
+    h2 .num{font-family:var(--fm);font-size:.7rem;color:var(--cyan);background:rgba(0,255,245,.08);border:1px solid rgba(0,255,245,.2);padding:2px 8px;flex-shrink:0;}
+    h3{font-family:var(--fm);font-size:.8rem;color:var(--cyan);margin:20px 0 8px;letter-spacing:.08em;}
+    p{color:var(--t2);margin-bottom:14px;font-size:.95rem;}
+    ul{list-style:none;margin-bottom:14px;}
+    ul li{font-size:.93rem;color:var(--t2);padding:7px 0 7px 18px;position:relative;border-bottom:1px solid rgba(255,255,255,.03);}
+    ul li::before{content:'›';position:absolute;left:0;color:var(--cyan);font-family:var(--fm);}
+    .cbox{background:var(--bg-card);border:1px solid rgba(0,255,245,.12);padding:26px 30px;margin-top:14px;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));position:relative;}
+    .cbox::before{content:'';position:absolute;top:0;right:0;border-style:solid;border-width:0 14px 14px 0;border-color:transparent rgba(0,255,245,.25) transparent transparent;}
+    .cbox p{margin:0;line-height:2.1;font-size:.9rem;}
+    footer{border-top:1px solid rgba(0,255,245,.06);padding:28px;text-align:center;position:relative;}
+    footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);box-shadow:0 0 8px var(--cyan);}
+    .fl{display:flex;justify-content:center;gap:28px;margin-bottom:12px;flex-wrap:wrap;}
+    .fl a{font-family:var(--fm);font-size:.72rem;color:var(--t3);}
+    .fl a:hover{color:var(--cyan);}
+    .fc{font-family:var(--fm);font-size:.7rem;color:var(--t3);}
+    strong.hl{color:var(--t1);}
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-inner">
-      <a href="/" class="nav-logo"><div class="nav-logo-icon">N</div>Nexova Digital</a>
-      <a href="/" class="nav-back">← Back to Home</a>
-    </div>
-  </nav>
+  <nav><div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="logo.png" alt="N" class="nav-logo-img"/>NEXOVA</a>
+    <a href="/" class="nav-back">← BACK TO HOME</a>
+  </div></nav>
+  <div class="wrap">
+    <div class="pg-tag">Legal Documentation</div>
+    <h1>TERMS OF <span class="h1a">SERVICE</span></h1>
+    <div class="pg-meta">Last updated: 13 February 2026 &nbsp;·&nbsp; Nexova Digital Solution (CA0417238-V)</div>
+    <div class="info-box"><p>Please read these Terms carefully before purchasing. By completing a purchase or using our services, you agree to be bound by these terms. Governed by the laws of Malaysia.</p></div>
 
-  <div class="container">
-    <div class="page-label">Legal</div>
-    <h1>Terms of Service</h1>
-    <div class="meta">
-      Last updated: 13 February 2026 &nbsp;·&nbsp; Nexova Digital Solution (CA0417238-V)
-    </div>
+    <h2><span class="num">01</span> Agreement to Terms</h2>
+    <p>These Terms constitute a legally binding agreement between you and <strong class="hl">Nexova Digital Solution</strong> (SSM No. 202603049266 / CA0417238-V), No. 6, Jalan U13/53A, Eco Ardence Seksyen U13, 40170 Shah Alam, Selangor. These Terms are governed by the <strong class="hl">Sale of Goods Act 1957</strong>, <strong class="hl">Consumer Protection Act 1999</strong>, and <strong class="hl">Electronic Commerce Act 2006</strong>.</p>
 
-    <div class="highlight-box">
-      <p>Please read these Terms of Service carefully before purchasing any products or services from Nexova Digital Solution. By completing a purchase or using our services, you agree to be bound by these terms.</p>
-    </div>
+    <h2><span class="num">02</span> Our Products and Services</h2>
+    <h3>// Digital Products</h3>
+    <p>We sell digital products including software source code, automation bots, website templates, e-books, and digital toolkits. Products are delivered electronically via download link or access credentials upon confirmed payment.</p>
+    <h3>// IT Consulting Services</h3>
+    <p>Custom software development, system integration, server deployment, and IT consulting. These services are governed by a separate project agreement agreed upon before commencement.</p>
 
-    <h2>1. Agreement to Terms</h2>
-    <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("Customer", "you") and Nexova Digital Solution, a sole proprietorship registered in Malaysia (SSM No. 202603049266 / CA0417238-V), with its principal place of business at No. 6, Jalan U13/53A, Eco Ardence Seksyen U13, 40170 Shah Alam, Selangor, Malaysia ("Company", "we", "us").</p>
-    <p>These Terms are governed by the laws of Malaysia, including the <strong>Sale of Goods Act 1957</strong>, <strong>Consumer Protection Act 1999</strong>, and <strong>Electronic Commerce Act 2006</strong>.</p>
-
-    <h2>2. Our Products and Services</h2>
-    <h3>Digital Products</h3>
-    <p>We sell digital products including but not limited to: software source code, automation bots, website templates, e-books, and digital toolkits. Digital products are delivered electronically via download link or access credentials upon confirmed payment.</p>
-    <h3>IT Consulting Services</h3>
-    <p>We provide custom software development, system integration, server deployment, and IT consulting services. These services are governed by a separate project agreement or statement of work agreed upon before commencement.</p>
-
-    <h2>3. Orders and Payment</h2>
-    <p>All prices are listed in Malaysian Ringgit (MYR) unless otherwise stated. Prices are exclusive of any applicable taxes.</p>
-    <p>We accept payment via:</p>
+    <h2><span class="num">03</span> Orders and Payment</h2>
+    <p>All prices are in Malaysian Ringgit (MYR). We accept:</p>
     <ul>
       <li>FPX Online Banking (via Billplz)</li>
       <li>Touch 'n Go eWallet and GrabPay (via Billplz)</li>
       <li>Visa and Mastercard credit/debit cards (via Stripe)</li>
-      <li>Other payment methods as displayed at checkout</li>
     </ul>
     <p>Your order is confirmed once payment is successfully processed. We reserve the right to cancel any order in the event of payment failure, suspected fraud, or pricing errors.</p>
 
-    <h2>4. Digital Product Delivery</h2>
-    <p>Upon successful payment, digital products will be delivered to you via:</p>
-    <ul>
-      <li>Automated download link sent to your registered email address, or</li>
-      <li>Access credentials sent via email or WhatsApp, or</li>
-      <li>Direct file transfer via WhatsApp upon confirmation</li>
-    </ul>
-    <p>Delivery is typically immediate or within 24 hours of payment confirmation. If you do not receive your product within 24 hours, please contact us at <a href="mailto:hello@nexovadigital.co">hello@nexovadigital.co</a>.</p>
+    <h2><span class="num">04</span> Digital Product Delivery</h2>
+    <p>Upon successful payment, products will be delivered via automated download link to your email, or directly via WhatsApp. Delivery is typically immediate or within 24 hours. If you do not receive your product within 24 hours, contact us immediately.</p>
 
-    <h2>5. Licence for Digital Products</h2>
-    <p>Upon purchase of a digital product, we grant you a <strong>non-exclusive, non-transferable, personal licence</strong> to use the product for your own business or personal purposes.</p>
-    <div class="warning-box">
-      <p><strong>You may NOT:</strong> Resell, redistribute, sublicense, share, or re-publish our digital products in whole or in part without our prior written consent. Unauthorised distribution constitutes a violation of copyright law.</p>
-    </div>
+    <h2><span class="num">05</span> Licence for Digital Products</h2>
+    <p>Upon purchase, we grant you a <strong class="hl">non-exclusive, non-transferable, personal licence</strong> to use the product for your own business or personal purposes.</p>
+    <div class="warn-box"><p><strong>You may NOT resell, redistribute, sublicense, share, or re-publish our digital products in whole or in part without prior written consent. Unauthorised distribution constitutes a violation of copyright law.</strong></p></div>
     <p>You MAY use our products to build products and services for your clients as part of your own business operations.</p>
 
-    <h2>6. IT Consulting Services</h2>
-    <p>For custom IT consulting and development services:</p>
+    <h2><span class="num">06</span> IT Consulting Services</h2>
     <ul>
       <li>A detailed scope of work will be agreed upon before project commencement</li>
-      <li>Payment milestones will be specified in the project agreement</li>
-      <li>A deposit of 50% is required before work begins, with the remaining balance due upon delivery</li>
-      <li>Timelines are estimates and may be adjusted based on project complexity</li>
+      <li>A deposit of 50% is required before work begins</li>
       <li>Source code ownership transfers to the client upon full payment</li>
+      <li>Timelines are estimates and may be adjusted based on complexity</li>
     </ul>
 
-    <h2>7. Intellectual Property</h2>
-    <p>All content on our website, including text, graphics, logos, and software, is the property of Nexova Digital Solution and is protected by Malaysian copyright law. Our company name, logo, and branding are proprietary.</p>
-    <p>Purchased digital products are licenced (not sold) to you as described in Section 5 above.</p>
+    <h2><span class="num">07</span> Intellectual Property</h2>
+    <p>All content on our website including text, graphics, logos, and software is the property of Nexova Digital Solution and is protected by Malaysian copyright law. Purchased digital products are licensed (not sold) to you as described in Section 5.</p>
 
-    <h2>8. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by Malaysian law:</p>
+    <h2><span class="num">08</span> Limitation of Liability</h2>
     <ul>
-      <li>Our total liability to you shall not exceed the amount you paid for the specific product or service giving rise to the claim</li>
-      <li>We are not liable for indirect, incidental, or consequential damages arising from your use of our products</li>
-      <li>We do not guarantee that our digital products will be error-free or meet every specific business requirement</li>
-      <li>We are not responsible for any third-party services, platforms, or APIs that our products interact with</li>
+      <li>Our total liability shall not exceed the amount you paid for the specific product</li>
+      <li>We are not liable for indirect, incidental, or consequential damages</li>
+      <li>We do not guarantee products will meet every specific business requirement</li>
+      <li>We are not responsible for third-party services or APIs our products interact with</li>
     </ul>
 
-    <h2>9. Warranties and Disclaimers</h2>
-    <p>Our digital products are provided "as is". We warrant that:</p>
-    <ul>
-      <li>Products will function as described in their product descriptions at the time of purchase</li>
-      <li>We will provide reasonable technical support for 30 days after purchase for digital product issues</li>
-    </ul>
-    <p>We do not warrant that our products will be compatible with all third-party software, or that results from using our products will meet your specific business goals.</p>
+    <h2><span class="num">09</span> Prohibited Uses</h2>
+    <p>You agree not to use our products or services for any illegal activity under Malaysian law, spamming, phishing, fraud, or to create content that infringes third-party intellectual property rights.</p>
 
-    <h2>10. Prohibited Uses</h2>
-    <p>You agree not to use our products or services for:</p>
-    <ul>
-      <li>Any illegal activity under Malaysian law or the laws of your jurisdiction</li>
-      <li>Spamming, phishing, or any form of fraud</li>
-      <li>Creating content that infringes third-party intellectual property rights</li>
-      <li>Reverse engineering our software beyond what is permitted by law</li>
-    </ul>
+    <h2><span class="num">10</span> Governing Law</h2>
+    <p>These Terms are governed by the laws of Malaysia. Disputes shall first be attempted through good-faith negotiation, then subject to the jurisdiction of the courts of Malaysia.</p>
 
-    <h2>11. Governing Law and Dispute Resolution</h2>
-    <p>These Terms are governed by the laws of Malaysia. Any disputes arising from these Terms or our products/services shall first be attempted to be resolved through good-faith negotiation. If unresolved, disputes shall be subject to the jurisdiction of the courts of Malaysia.</p>
-
-    <h2>12. Changes to Terms</h2>
-    <p>We reserve the right to update these Terms at any time. Changes will be effective upon posting to this page. Your continued use of our services after changes constitutes acceptance of the updated Terms.</p>
-
-    <h2>13. Contact Us</h2>
-    <p>For any questions regarding these Terms, please contact:</p>
-    <div class="highlight-box">
-      <p><strong>Nexova Digital Solution</strong><br/>
+    <h2><span class="num">11</span> Contact Us</h2>
+    <div class="cbox"><p>
+      <strong style="color:var(--cyan);font-family:var(--fh);font-size:.8rem;">NEXOVA DIGITAL SOLUTION</strong><br/>
       SSM No: 202603049266 (CA0417238-V)<br/>
       No. 6, Jalan U13/53A, Eco Ardence Seksyen U13, 40170 Shah Alam, Selangor<br/>
       Email: <a href="mailto:hello@nexovadigital.co">hello@nexovadigital.co</a><br/>
-      WhatsApp: <a href="https://wa.me/60165484979">+60 16-548 4979</a></p>
-    </div>
+      WhatsApp: <a href="https://wa.me/60165484979">+60 16-548 4979</a>
+    </p></div>
   </div>
-
   <footer>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms of Service</a>
-      <a href="/refund">Refund Policy</a>
-    </div>
-    <div class="footer-copy">© 2026 Nexova Digital Solution (CA0417238-V) · Shah Alam, Malaysia</div>
+    <div class="fl"><a href="/">HOME</a><a href="/privacy">PRIVACY</a><a href="/terms">TERMS</a><a href="/refund">REFUND</a></div>
+    <div class="fc">© 2026 NEXOVA DIGITAL SOLUTION (CA0417238-V) · SHAH ALAM, MALAYSIA</div>
   </footer>
 </body>
 </html>
