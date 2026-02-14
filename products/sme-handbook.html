@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SME Digitalization Handbook 2026 | Nexova Digital</title>
+  <meta name="description" content="The complete step-by-step guide for Malaysian SMEs to go digital. Tools, workflows, compliance and a 90-day action plan. RM99 one-time."/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#030308;--bg-card:#0d0d1a;--bg2:#070710;--cyan:#00fff5;--mag:#ff00aa;--purple:#8b5cf6;--green:#00ff88;--t1:#e8e8f8;--t2:#8888aa;--t3:#44445a;--fh:'Orbitron',monospace;--fb:'Rajdhani',sans-serif;--fm:'Share Tech Mono',monospace;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--t1);font-family:var(--fb);font-size:17px;line-height:1.7;overflow-x:hidden;}
+    body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,255,245,.010) 2px,rgba(0,255,245,.010) 4px);pointer-events:none;z-index:900;}
+    a{color:var(--cyan);text-decoration:none;}a:hover{color:var(--mag);}
+
+    /* NAV */
+    nav{background:rgba(3,3,8,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,255,245,.1);padding:14px 0;position:sticky;top:0;z-index:100;}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-family:var(--fh);font-size:.85rem;font-weight:800;letter-spacing:.08em;display:flex;align-items:center;gap:10px;color:var(--t1);}
+    .nav-logo-img{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(0,255,245,.7));}
+    .nav-back{font-family:var(--fm);font-size:.75rem;color:var(--t2);transition:color .2s;display:flex;align-items:center;gap:6px;}
+    .nav-back:hover{color:var(--cyan);}
+    .nav-buy{font-family:var(--fh);font-size:.65rem;font-weight:700;letter-spacing:.1em;background:var(--cyan);color:#000;padding:10px 20px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all .2s;box-shadow:0 0 20px rgba(0,255,245,.3);}
+    .nav-buy:hover{background:var(--mag);color:#fff;box-shadow:0 0 30px rgba(255,0,170,.4);}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
+
+    /* HERO */
+    .hero{padding:64px 0 80px;position:relative;overflow:hidden;border-bottom:1px solid rgba(0,255,245,.06);}
+    .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,245,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,245,.03) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 90% 90% at 30% 50%,black,transparent);}
+    .hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+    .orb1{width:400px;height:400px;background:var(--cyan);top:-100px;right:-50px;opacity:.05;}
+    .orb2{width:300px;height:300px;background:var(--mag);bottom:-50px;left:20%;opacity:.06;}
+    .hero-layout{display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;position:relative;z-index:1;}
+
+    /* Breadcrumb */
+    .breadcrumb{font-family:var(--fm);font-size:11px;color:var(--t3);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+    .breadcrumb span{color:var(--t3);}
+    .breadcrumb a{color:var(--t2);}
+    .breadcrumb a:hover{color:var(--cyan);}
+
+    /* Badge row */
+    .badge-row{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+    .badge{font-family:var(--fm);font-size:10px;letter-spacing:.1em;padding:4px 12px;border:1px solid;}
+    .badge-avail{color:var(--green);border-color:rgba(0,255,136,.3);background:rgba(0,255,136,.06);}
+    .badge-type{color:var(--cyan);border-color:rgba(0,255,245,.2);background:rgba(0,255,245,.04);}
+    .badge-lang{color:var(--purple);border-color:rgba(139,92,246,.2);background:rgba(139,92,246,.04);}
+
+    h1{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:.01em;margin-bottom:16px;}
+    .h1-accent{color:var(--cyan);text-shadow:0 0 20px rgba(0,255,245,.4);}
+    .hero-tagline{font-size:1.1rem;color:var(--t2);line-height:1.8;max-width:500px;margin-bottom:32px;border-left:2px solid rgba(0,255,245,.3);padding-left:16px;}
+
+    /* Quick stats */
+    .quick-stats{display:flex;gap:28px;margin-bottom:36px;flex-wrap:wrap;}
+    .qs-item{text-align:center;}
+    .qs-val{font-family:var(--fh);font-size:1.4rem;font-weight:900;color:var(--cyan);text-shadow:0 0 12px rgba(0,255,245,.4);line-height:1;}
+    .qs-lab{font-family:var(--fm);font-size:10px;color:var(--t3);letter-spacing:.08em;margin-top:4px;}
+
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:.7rem;font-weight:700;letter-spacing:.12em;padding:16px 32px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#000;clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);transition:all .25s;box-shadow:0 0 30px rgba(0,255,245,.25);}
+    .btn-primary:hover{box-shadow:0 0 50px rgba(0,255,245,.5);transform:translateY(-2px);color:#000;}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:.7rem;font-weight:700;letter-spacing:.12em;padding:16px 28px;background:transparent;color:var(--cyan);border:1px solid rgba(0,255,245,.3);clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);transition:all .25s;}
+    .btn-ghost:hover{background:rgba(0,255,245,.08);border-color:var(--cyan);}
+
+    /* PRODUCT MOCKUP (right side) */
+    .mockup-wrap{position:relative;}
+    .pdf-mockup{background:var(--bg-card);border:1px solid rgba(0,255,245,.15);padding:0;position:relative;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%);overflow:hidden;box-shadow:0 0 60px rgba(0,255,245,.08),0 40px 80px rgba(0,0,0,.5);}
+    .pdf-mockup::before{content:'';position:absolute;top:0;right:0;border-style:solid;border-width:0 20px 20px 0;border-color:transparent rgba(0,255,245,.3) transparent transparent;z-index:2;}
+
+    /* PDF Cover design */
+    .pdf-cover{background:linear-gradient(135deg,#070714 0%,#0d0a1f 50%,#0a0714 100%);padding:32px 28px;min-height:320px;position:relative;overflow:hidden;}
+    .pdf-cover::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,245,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,245,.05) 1px,transparent 1px);background-size:24px 24px;}
+    .pdf-cover-orb{position:absolute;width:200px;height:200px;background:radial-gradient(var(--purple),transparent 70%);bottom:-60px;right:-40px;opacity:.3;}
+    .pdf-cover-content{position:relative;z-index:1;}
+    .pdf-tag{font-family:var(--fm);font-size:9px;color:var(--cyan);letter-spacing:.15em;border:1px solid rgba(0,255,245,.2);display:inline-block;padding:3px 10px;margin-bottom:20px;}
+    .pdf-title{font-family:var(--fh);font-size:1.1rem;font-weight:900;line-height:1.2;margin-bottom:6px;letter-spacing:.04em;}
+    .pdf-subtitle{font-family:var(--fh);font-size:.65rem;color:var(--cyan);letter-spacing:.15em;margin-bottom:24px;}
+    .pdf-divider{height:1px;background:linear-gradient(90deg,var(--cyan),var(--mag),transparent);margin-bottom:20px;opacity:.4;}
+    .pdf-chapters{display:flex;flex-direction:column;gap:8px;}
+    .pdf-ch{display:flex;align-items:center;gap:10px;font-family:var(--fm);font-size:.72rem;color:var(--t2);}
+    .pdf-ch-num{font-size:.65rem;color:var(--cyan);width:22px;flex-shrink:0;}
+    .pdf-meta{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:16px;border-top:1px solid rgba(0,255,245,.08);}
+    .pdf-meta-brand{font-family:var(--fh);font-size:.6rem;color:var(--t3);letter-spacing:.1em;}
+    .pdf-meta-pages{font-family:var(--fm);font-size:.65rem;color:var(--cyan);}
+
+    /* Price card */
+    .price-card{background:rgba(0,0,0,.5);border-top:1px solid rgba(0,255,245,.1);padding:24px 28px;}
+    .price-label{font-family:var(--fm);font-size:10px;color:var(--t3);letter-spacing:.1em;margin-bottom:4px;}
+    .price-row{display:flex;align-items:baseline;gap:6px;margin-bottom:16px;}
+    .price-rm{font-family:var(--fm);font-size:1rem;color:var(--t2);}
+    .price-amt{font-family:var(--fh);font-size:2.8rem;font-weight:900;color:var(--cyan);text-shadow:0 0 20px rgba(0,255,245,.5);line-height:1;}
+    .price-once{font-family:var(--fm);font-size:.75rem;color:var(--t3);}
+    .price-includes{display:flex;flex-direction:column;gap:6px;}
+    .pi{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--t2);}
+    .pi-check{font-family:var(--fm);font-size:10px;color:var(--green);text-shadow:0 0 6px var(--green);}
+
+    /* SECTIONS */
+    .section{padding:80px 0;border-top:1px solid rgba(0,255,245,.05);}
+    .sec-tag{font-family:var(--fm);font-size:11px;color:var(--mag);letter-spacing:.2em;display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+    .sec-tag::before{content:'//';color:var(--t3);}
+    .sec-title{font-family:var(--fh);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;letter-spacing:.02em;margin-bottom:12px;}
+    .sec-sub{font-size:.95rem;color:var(--t2);max-width:560px;line-height:1.8;margin-bottom:48px;}
+
+    /* WHAT'S INSIDE */
+    .chapters-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(0,255,245,.04);}
+    .chapter-card{background:var(--bg-card);padding:28px;position:relative;overflow:hidden;transition:all .3s;}
+    .chapter-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transition:opacity .3s;}
+    .chapter-card:hover::after{opacity:1;}
+    .chapter-card:hover{background:rgba(13,13,26,.98);transform:translateY(-2px);}
+    .ch-num{font-family:var(--fm);font-size:.7rem;color:var(--t3);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+    .ch-num::before{content:'';display:inline-block;width:20px;height:1px;background:var(--cyan);opacity:.4;}
+    .ch-icon{width:44px;height:44px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;position:relative;}
+    .ch-icon::before{content:'';position:absolute;inset:0;background:rgba(0,255,245,.06);clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);}
+    .ch-title{font-family:var(--fh);font-size:.82rem;font-weight:700;letter-spacing:.04em;margin-bottom:10px;}
+    .ch-items{list-style:none;}
+    .ch-items li{font-size:.83rem;color:var(--t2);padding:5px 0 5px 14px;position:relative;border-bottom:1px solid rgba(255,255,255,.03);}
+    .ch-items li::before{content:'›';position:absolute;left:0;color:var(--cyan);font-family:var(--fm);}
+
+    /* WHO IS THIS FOR */
+    .for-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:0;}
+    .for-card{display:flex;gap:16px;align-items:flex-start;background:var(--bg-card);padding:24px;border-left:2px solid rgba(0,255,245,.2);transition:all .3s;}
+    .for-card:hover{border-left-color:var(--cyan);background:rgba(13,13,26,.98);}
+    .for-icon{font-size:28px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(0,255,245,.3));}
+    .for-title{font-family:var(--fh);font-size:.8rem;font-weight:700;letter-spacing:.04em;margin-bottom:6px;}
+    .for-desc{font-size:.88rem;color:var(--t2);line-height:1.6;}
+
+    /* SAMPLE PAGES MOCK */
+    .sample-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .sample-page{background:var(--bg-card);border:1px solid rgba(0,255,245,.08);padding:20px;position:relative;transition:all .3s;cursor:default;}
+    .sample-page:hover{border-color:rgba(0,255,245,.2);box-shadow:0 0 30px rgba(0,255,245,.05);}
+    .sample-page-tag{font-family:var(--fm);font-size:9px;color:var(--cyan);letter-spacing:.1em;margin-bottom:14px;opacity:.7;}
+    .sample-title{font-family:var(--fh);font-size:.75rem;font-weight:700;margin-bottom:12px;letter-spacing:.03em;}
+    /* Fake content lines */
+    .fake-line{height:6px;background:rgba(255,255,255,.06);border-radius:2px;margin-bottom:6px;}
+    .fake-line.short{width:60%;}
+    .fake-line.med{width:80%;}
+    .fake-line.full{width:100%;}
+    .fake-line.cyan{background:rgba(0,255,245,.2);}
+    .fake-line.mag{background:rgba(255,0,170,.15);}
+    .fake-chart{height:60px;display:flex;align-items:flex-end;gap:4px;margin:12px 0;}
+    .fake-bar{flex:1;background:rgba(0,255,245,.15);border-top:1px solid rgba(0,255,245,.4);transition:height .3s;}
+    .fake-table{border:1px solid rgba(0,255,245,.08);}
+    .fake-tr{display:flex;border-bottom:1px solid rgba(0,255,245,.05);}
+    .fake-tr:last-child{border-bottom:none;}
+    .fake-td{flex:1;height:16px;border-right:1px solid rgba(0,255,245,.05);padding:4px;}
+    .fake-td:last-child{border-right:none;}
+    .fake-td.header{background:rgba(0,255,245,.05);}
+
+    /* WHAT YOU GET */
+    .deliverables{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(0,255,245,.04);}
+    .deliv-item{background:var(--bg-card);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;}
+    .deliv-icon-wrap{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;}
+    .deliv-icon-wrap::before{content:'';position:absolute;inset:0;border:1px solid rgba(0,255,245,.2);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:rgba(0,255,245,.04);}
+    .deliv-title{font-family:var(--fh);font-size:.78rem;font-weight:700;letter-spacing:.04em;margin-bottom:4px;}
+    .deliv-desc{font-size:.85rem;color:var(--t2);line-height:1.6;}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:2px;}
+    .faq-item{background:var(--bg-card);border-left:2px solid transparent;transition:all .3s;cursor:pointer;}
+    .faq-item.open{border-left-color:var(--cyan);}
+    .faq-q{padding:20px 24px;font-family:var(--fh);font-size:.82rem;font-weight:600;letter-spacing:.04em;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+    .faq-toggle{font-family:var(--fm);font-size:1rem;color:var(--cyan);transition:transform .3s;flex-shrink:0;}
+    .faq-item.open .faq-toggle{transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 24px;}
+    .faq-item.open .faq-a{max-height:200px;padding:0 24px 20px;}
+    .faq-a p{font-size:.9rem;color:var(--t2);line-height:1.7;}
+
+    /* FINAL CTA */
+    .final-cta{padding:80px 0;}
+    .cta-box{border:1px solid rgba(0,255,245,.12);background:radial-gradient(ellipse at 50% 100%,rgba(0,255,245,.04) 0%,transparent 70%);padding:64px 48px;text-align:center;position:relative;clip-path:polygon(20px 0%,calc(100% - 20px) 0%,100% 20px,100% calc(100% - 20px),calc(100% - 20px) 100%,20px 100%,0% calc(100% - 20px),0% 20px);}
+    .corner{position:absolute;width:24px;height:24px;}
+    .c-tl{top:0;left:0;border-top:2px solid var(--cyan);border-left:2px solid var(--cyan);}
+    .c-tr{top:0;right:0;border-top:2px solid var(--cyan);border-right:2px solid var(--cyan);}
+    .c-bl{bottom:0;left:0;border-bottom:2px solid var(--mag);border-left:2px solid var(--mag);}
+    .c-br{bottom:0;right:0;border-bottom:2px solid var(--mag);border-right:2px solid var(--mag);}
+    .cta-price-display{margin:24px 0 32px;}
+    .cta-price-label{font-family:var(--fm);font-size:11px;color:var(--t3);letter-spacing:.1em;margin-bottom:4px;}
+    .cta-price-big{font-family:var(--fh);font-size:4rem;font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--mag));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;filter:drop-shadow(0 0 20px rgba(0,255,245,.3));}
+    .cta-price-sub{font-family:var(--fm);font-size:.8rem;color:var(--t3);}
+    .cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+    .cta-note{font-family:var(--fm);font-size:.75rem;color:var(--t3);margin-top:20px;}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(0,255,245,.06);padding:28px;text-align:center;position:relative;}
+    footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);box-shadow:0 0 8px var(--cyan);}
+    .fl{display:flex;justify-content:center;gap:28px;margin-bottom:12px;flex-wrap:wrap;}
+    .fl a{font-family:var(--fm);font-size:.72rem;color:var(--t3);}
+    .fl a:hover{color:var(--cyan);}
+    .fc{font-family:var(--fm);font-size:.7rem;color:var(--t3);}
+
+    /* Fade up */
+    .fade-up{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1);}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .hero-layout{grid-template-columns:1fr;}.pdf-mockup{max-width:400px;}
+      .chapters-grid{grid-template-columns:repeat(2,1fr);}
+      .sample-grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:600px){
+      .chapters-grid{grid-template-columns:1fr;}
+      .for-grid{grid-template-columns:1fr;}
+      .deliverables{grid-template-columns:1fr;}
+      .sample-grid{grid-template-columns:1fr;}
+      .cta-box{padding:40px 24px;}
+      .cta-price-big{font-size:3rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><img src="../logo.png" alt="Nexova" class="nav-logo-img"/>NEXOVA</a>
+      <a href="/#products" class="nav-back">← ALL PRODUCTS</a>
+      <a href="https://wa.me/60165484979?text=Hi,%20I'd%20like%20to%20purchase%20the%20SME%20Digitalization%20Handbook" target="_blank" class="nav-buy">BUY NOW — RM99</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="wrap">
+      <div class="hero-layout">
+        <!-- Left: Info -->
+        <div>
+          <div class="breadcrumb">
+            <a href="/">Home</a><span>/</span>
+            <a href="/#products">Products</a><span>/</span>
+            <span style="color:var(--t1)">SME Handbook</span>
+          </div>
+          <div class="badge-row">
+            <span class="badge badge-avail">● AVAILABLE NOW</span>
+            <span class="badge badge-type">PDF E-BOOK</span>
+            <span class="badge badge-lang">ENGLISH</span>
+          </div>
+          <h1>SME DIGITALIZATION<br/><span class="h1-accent">HANDBOOK 2026</span></h1>
+          <p class="hero-tagline">The complete, no-fluff playbook for Malaysian SMEs ready to go digital — covering tools, workflows, compliance, and a 90-day execution plan.</p>
+          <div class="quick-stats">
+            <div class="qs-item"><div class="qs-val">6</div><div class="qs-lab">Chapters</div></div>
+            <div class="qs-item"><div class="qs-val">80+</div><div class="qs-lab">Pages</div></div>
+            <div class="qs-item"><div class="qs-val">50+</div><div class="qs-lab">Tools Reviewed</div></div>
+            <div class="qs-item"><div class="qs-val">90</div><div class="qs-lab">Day Action Plan</div></div>
+          </div>
+          <div class="hero-actions">
+            <a href="https://wa.me/60165484979?text=Hi,%20I'd%20like%20to%20purchase%20the%20SME%20Digitalization%20Handbook" target="_blank" class="btn-primary">GET IT NOW — RM99 →</a>
+            <a href="#contents" class="btn-ghost">SEE FULL CONTENTS</a>
+          </div>
+        </div>
+
+        <!-- Right: PDF Mockup -->
+        <div class="mockup-wrap">
+          <div class="pdf-mockup">
+            <div class="pdf-cover">
+              <div class="pdf-cover-orb"></div>
+              <div class="pdf-cover-content">
+                <div class="pdf-tag">NEXOVA DIGITAL · 2026 EDITION</div>
+                <div class="pdf-title">SME DIGITALIZATION<br/>HANDBOOK</div>
+                <div class="pdf-subtitle">MALAYSIA & SOUTHEAST ASIA</div>
+                <div class="pdf-divider"></div>
+                <div class="pdf-chapters">
+                  <div class="pdf-ch"><span class="pdf-ch-num">01</span>Digital Readiness Assessment</div>
+                  <div class="pdf-ch"><span class="pdf-ch-num">02</span>Essential Tools Stack</div>
+                  <div class="pdf-ch"><span class="pdf-ch-num">03</span>Online Presence Setup</div>
+                  <div class="pdf-ch"><span class="pdf-ch-num">04</span>Payment & Sales Automation</div>
+                  <div class="pdf-ch"><span class="pdf-ch-num">05</span>Malaysia Compliance Guide</div>
+                  <div class="pdf-ch"><span class="pdf-ch-num">06</span>90-Day Action Plan</div>
+                </div>
+                <div class="pdf-meta">
+                  <span class="pdf-meta-brand">NEXOVADIGITAL.CO</span>
+                  <span class="pdf-meta-pages">80+ PAGES</span>
+                </div>
+              </div>
+            </div>
+            <div class="price-card">
+              <div class="price-label">// ONE-TIME PURCHASE</div>
+              <div class="price-row">
+                <span class="price-rm">RM</span>
+                <span class="price-amt">99</span>
+                <span class="price-once">· one-time</span>
+              </div>
+              <div class="price-includes">
+                <div class="pi"><span class="pi-check">[✓]</span> Instant PDF download</div>
+                <div class="pi"><span class="pi-check">[✓]</span> Free future updates</div>
+                <div class="pi"><span class="pi-check">[✓]</span> WhatsApp support included</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="section" id="contents">
+    <div class="wrap">
+      <div class="sec-tag">Full Table of Contents</div>
+      <h2 class="sec-title">WHAT'S <span style="color:var(--cyan)">INSIDE</span></h2>
+      <p class="sec-sub">Six comprehensive chapters covering every aspect of your digital transformation journey — from assessment to execution.</p>
+      <div class="chapters-grid">
+
+        <div class="chapter-card fade-up">
+          <div class="ch-num">CHAPTER 01</div>
+          <div class="ch-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#00fff5" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="#00fff5" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="#00fff5" opacity=".3"/></svg>
+          </div>
+          <div class="ch-title">Digital Readiness Assessment</div>
+          <ul class="ch-items">
+            <li>Self-assessment scorecard (0–100)</li>
+            <li>5-stage digitalization framework</li>
+            <li>Industry-specific benchmarks</li>
+            <li>Priority gap analysis template</li>
+          </ul>
+        </div>
+
+        <div class="chapter-card fade-up">
+          <div class="ch-num">CHAPTER 02</div>
+          <div class="ch-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1" stroke="#00fff5" stroke-width="1.5"/><rect x="13" y="3" width="8" height="8" rx="1" stroke="#ff00aa" stroke-width="1.5"/><rect x="3" y="13" width="8" height="8" rx="1" stroke="#8b5cf6" stroke-width="1.5"/><rect x="13" y="13" width="8" height="8" rx="1" stroke="#00fff5" stroke-width="1.5" opacity=".5"/></svg>
+          </div>
+          <div class="ch-title">Essential Tools Stack</div>
+          <ul class="ch-items">
+            <li>Accounting: Wave, QuickBooks, SQL</li>
+            <li>CRM: HubSpot, Zoho, local options</li>
+            <li>WhatsApp Business setup guide</li>
+            <li>Free vs paid — honest comparison</li>
+          </ul>
+        </div>
+
+        <div class="chapter-card fade-up">
+          <div class="ch-num">CHAPTER 03</div>
+          <div class="ch-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#00fff5" stroke-width="1.5"/><ellipse cx="12" cy="12" rx="4" ry="9" stroke="#8b5cf6" stroke-width="1"/><line x1="3" y1="12" x2="21" y2="12" stroke="#ff00aa" stroke-width="1" opacity=".6"/></svg>
+          </div>
+          <div class="ch-title">Online Presence Setup</div>
+          <ul class="ch-items">
+            <li>Google Business Profile step-by-step</li>
+            <li>Website essentials checklist</li>
+            <li>Social media content calendar</li>
+            <li>SEO basics for Malaysian SMEs</li>
+          </ul>
+        </div>
+
+        <div class="chapter-card fade-up">
+          <div class="ch-num">CHAPTER 04</div>
+          <div class="ch-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="#00fff5" stroke-width="1.5"/><line x1="2" y1="10" x2="22" y2="10" stroke="#00fff5" stroke-width="1.5"/><circle cx="7" cy="15" r="1.5" fill="#ff00aa"/></svg>
+          </div>
+          <div class="ch-title">Payment & Sales Automation</div>
+          <ul class="ch-items">
+            <li>FPX, TNG, GrabPay setup guide</li>
+            <li>Billplz & Stripe merchant accounts</li>
+            <li>Auto-invoice configuration</li>
+            <li>Abandoned cart recovery tactics</li>
+          </ul>
+        </div>
+
+        <div class="chapter-card fade-up">
+          <div class="ch-num">CHAPTER 05</div>
+          <div class="ch-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3L4 7v6c0 4.4 3.4 8.5 8 9.9 4.6-1.4 8-5.5 8-9.9V7L12 3z" stroke="#00fff5" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="ch-title">Malaysia Compliance Guide</div>
+          <ul class="ch-items">
+            <li>SSM registration requirements</li>
+            <li>SST & income tax basics for SMEs</li>
+            <li>PDPA data protection checklist</li>
+            <li>E-commerce legal requirements</li>
+          </ul>
+        </div>
+
+        <div class="chapter-card fade-up">
+          <div class="ch-num">CHAPTER 06</div>
+          <div class="ch-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#00fff5" stroke-width="1.5"/><line x1="3" y1="9" x2="21" y2="9" stroke="#00fff5" stroke-width="1" opacity=".5"/><line x1="8" y1="2" x2="8" y2="6" stroke="#ff00aa" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="2" x2="16" y2="6" stroke="#ff00aa" stroke-width="1.5" stroke-linecap="round"/><rect x="7" y="12" width="4" height="4" rx=".5" fill="#00fff5" opacity=".4"/><rect x="13" y="12" width="4" height="4" rx=".5" fill="#8b5cf6" opacity=".4"/></svg>
+          </div>
+          <div class="ch-title">90-Day Action Plan</div>
+          <ul class="ch-items">
+            <li>Month 1: Foundation & setup</li>
+            <li>Month 2: Launch & first sales</li>
+            <li>Month 3: Optimise & scale</li>
+            <li>Weekly task checklists included</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IS IT FOR -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-tag">Target Audience</div>
+      <h2 class="sec-title">WHO IS THIS <span style="color:var(--cyan)">FOR?</span></h2>
+      <p class="sec-sub">Built specifically for Malaysian and Southeast Asian business owners who are ready to go digital but don't know where to start.</p>
+      <div class="for-grid">
+        <div class="for-card fade-up">
+          <div class="for-icon">🏪</div>
+          <div><div class="for-title">Traditional SME Owners</div><div class="for-desc">Running a physical business — F&B, retail, services — and want to move sales online without the technical overwhelm.</div></div>
+        </div>
+        <div class="for-card fade-up">
+          <div class="for-icon">🚀</div>
+          <div><div class="for-title">First-Time Online Entrepreneurs</div><div class="for-desc">Starting your first online business and need a structured roadmap covering everything from tools to legal compliance.</div></div>
+        </div>
+        <div class="for-card fade-up">
+          <div class="for-icon">📊</div>
+          <div><div class="for-title">Business Managers & Executives</div><div class="for-desc">Tasked with leading your company's digital transformation and need a practical framework to present to leadership.</div></div>
+        </div>
+        <div class="for-card fade-up">
+          <div class="for-icon">🎓</div>
+          <div><div class="for-title">Fresh Graduates & Freelancers</div><div class="for-desc">Building a freelance or consulting business and need to understand the Malaysian digital business landscape end-to-end.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLE PAGES -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-tag">Inside The Book</div>
+      <h2 class="sec-title">SAMPLE <span style="color:var(--cyan)">PAGES</span></h2>
+      <p class="sec-sub">A glimpse of what the content looks like — structured, visual, and actionable.</p>
+      <div class="sample-grid">
+        <div class="sample-page fade-up">
+          <div class="sample-page-tag">// CH.01 · ASSESSMENT SCORECARD</div>
+          <div class="sample-title">Digital Readiness Score</div>
+          <div class="fake-line cyan" style="width:40%;height:3px;margin-bottom:12px;"></div>
+          <div class="fake-chart">
+            <div class="fake-bar" style="height:40%;"></div>
+            <div class="fake-bar" style="height:70%;"></div>
+            <div class="fake-bar" style="height:55%;"></div>
+            <div class="fake-bar" style="height:85%;background:rgba(0,255,245,.3);border-top-color:var(--cyan);"></div>
+            <div class="fake-bar" style="height:45%;"></div>
+            <div class="fake-bar" style="height:60%;"></div>
+          </div>
+          <div class="fake-line full"></div>
+          <div class="fake-line med"></div>
+          <div class="fake-line short"></div>
+        </div>
+        <div class="sample-page fade-up">
+          <div class="sample-page-tag">// CH.02 · TOOLS COMPARISON</div>
+          <div class="sample-title">Accounting Software Review</div>
+          <div class="fake-line cyan" style="width:40%;height:3px;margin-bottom:12px;"></div>
+          <div class="fake-table" style="margin:10px 0;">
+            <div class="fake-tr"><div class="fake-td header"></div><div class="fake-td header"></div><div class="fake-td header"></div></div>
+            <div class="fake-tr"><div class="fake-td"></div><div class="fake-td" style="background:rgba(0,255,245,.04);"></div><div class="fake-td"></div></div>
+            <div class="fake-tr"><div class="fake-td"></div><div class="fake-td" style="background:rgba(0,255,245,.04);"></div><div class="fake-td"></div></div>
+            <div class="fake-tr"><div class="fake-td"></div><div class="fake-td" style="background:rgba(0,255,245,.04);"></div><div class="fake-td"></div></div>
+          </div>
+          <div class="fake-line full"></div>
+          <div class="fake-line short"></div>
+        </div>
+        <div class="sample-page fade-up">
+          <div class="sample-page-tag">// CH.06 · 90-DAY PLAN</div>
+          <div class="sample-title">Week-by-Week Checklist</div>
+          <div class="fake-line mag" style="width:40%;height:3px;margin-bottom:12px;"></div>
+          <div style="display:flex;flex-direction:column;gap:6px;margin:10px 0;">
+            <div style="display:flex;align-items:center;gap:8px;"><div style="width:12px;height:12px;border:1px solid var(--cyan);flex-shrink:0;"></div><div class="fake-line full" style="margin:0;flex:1;"></div></div>
+            <div style="display:flex;align-items:center;gap:8px;"><div style="width:12px;height:12px;border:1px solid var(--cyan);background:rgba(0,255,245,.2);flex-shrink:0;"></div><div class="fake-line med" style="margin:0;flex:1;"></div></div>
+            <div style="display:flex;align-items:center;gap:8px;"><div style="width:12px;height:12px;border:1px solid var(--cyan);flex-shrink:0;"></div><div class="fake-line full" style="margin:0;flex:1;"></div></div>
+            <div style="display:flex;align-items:center;gap:8px;"><div style="width:12px;height:12px;border:1px solid var(--t3);flex-shrink:0;"></div><div class="fake-line short" style="margin:0;flex:1;"></div></div>
+          </div>
+          <div class="fake-line full"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-tag">Deliverables</div>
+      <h2 class="sec-title">WHAT YOU <span style="color:var(--cyan)">RECEIVE</span></h2>
+      <p class="sec-sub">Everything delivered instantly to your email or WhatsApp upon confirmed payment.</p>
+      <div class="deliverables">
+        <div class="deliv-item fade-up">
+          <div class="deliv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8L14 2z" stroke="#00fff5" stroke-width="1.5"/><polyline points="14 2 14 8 20 8" stroke="#00fff5" stroke-width="1.5"/></svg></div>
+          <div><div class="deliv-title">PDF E-Book (80+ Pages)</div><div class="deliv-desc">High-quality, print-ready PDF with full colour layouts, charts, and checklists.</div></div>
+        </div>
+        <div class="deliv-item fade-up">
+          <div class="deliv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#00fff5" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="deliv-title">Editable Checklist Templates</div><div class="deliv-desc">All checklists and action plans in editable format so you can track your progress.</div></div>
+        </div>
+        <div class="deliv-item fade-up">
+          <div class="deliv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#00fff5" stroke-width="1.5"/></svg></div>
+          <div><div class="deliv-title">WhatsApp Support (30 days)</div><div class="deliv-desc">Direct access to ask questions about implementing the handbook in your business.</div></div>
+        </div>
+        <div class="deliv-item fade-up">
+          <div class="deliv-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke="#00fff5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17 6 23 6 23 12" stroke="#00fff5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="deliv-title">Free Lifetime Updates</div><div class="deliv-desc">Malaysian regulations and digital tools change. Buy once and receive all future updated editions free.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-tag">Common Questions</div>
+      <h2 class="sec-title">FAQ</h2>
+      <p class="sec-sub" style="margin-bottom:32px;">Everything you need to know before purchasing.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">How do I receive the handbook after payment?<span class="faq-toggle">+</span></div>
+          <div class="faq-a"><p>Immediately after payment is confirmed, you'll receive a download link via email and WhatsApp. The entire process takes less than 5 minutes. If you don't receive it within 15 minutes, contact us directly on WhatsApp.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is this relevant for businesses outside Malaysia?<span class="faq-toggle">+</span></div>
+          <div class="faq-a"><p>The core digital transformation strategies apply across Southeast Asia. However, the compliance chapter (Chapter 5) is specifically focused on Malaysian regulations — SSM, SST, and PDPA. If you're in Indonesia, Singapore, or Thailand, chapters 1–4 and 6 are fully applicable.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">I'm not tech-savvy at all. Will I understand this?<span class="faq-toggle">+</span></div>
+          <div class="faq-a"><p>Absolutely. The handbook is written specifically for business owners, not developers. Every tool recommendation includes step-by-step setup instructions with screenshots. If you get stuck, our 30-day WhatsApp support has you covered.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What payment methods do you accept?<span class="faq-toggle">+</span></div>
+          <div class="faq-a"><p>We accept FPX online banking, Touch 'n Go eWallet, GrabPay, and Visa/Mastercard credit or debit cards. All payments are processed securely via Billplz and Stripe.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I share this with my team or business partner?<span class="faq-toggle">+</span></div>
+          <div class="faq-a"><p>Your purchase covers personal and internal business use — share freely within your own company. Redistribution or resale to third parties is not permitted under the licence terms.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <div class="wrap">
+      <div class="cta-box">
+        <div class="corner c-tl"></div><div class="corner c-tr"></div>
+        <div class="corner c-bl"></div><div class="corner c-br"></div>
+        <div class="sec-tag" style="justify-content:center;margin-bottom:12px;">Get Started Today</div>
+        <h2 style="font-family:var(--fh);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;letter-spacing:.02em;margin-bottom:8px;">STOP GUESSING.<br/>START <span style="color:var(--cyan);text-shadow:0 0 20px rgba(0,255,245,.4)">EXECUTING.</span></h2>
+        <p style="color:var(--t2);max-width:440px;margin:0 auto;font-size:.95rem;">80+ pages of proven strategies, real tool comparisons, and a step-by-step 90-day plan — for less than a business lunch.</p>
+        <div class="cta-price-display">
+          <div class="cta-price-label">// ONE-TIME PRICE</div>
+          <div class="cta-price-big">RM 99</div>
+          <div class="cta-price-sub">PDF download · Instant delivery · Lifetime updates</div>
+        </div>
+        <div class="cta-actions">
+          <a href="https://wa.me/60165484979?text=Hi,%20I'd%20like%20to%20purchase%20the%20SME%20Digitalization%20Handbook%20(RM99)" target="_blank" class="btn-primary">BUY NOW VIA WHATSAPP →</a>
+        </div>
+        <div class="cta-note">🛡️ Secure payment via Billplz &amp; Stripe &nbsp;·&nbsp; 7-day refund guarantee &nbsp;·&nbsp; SSM Registered (CA0417238-V)</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="fl"><a href="/">HOME</a><a href="/#products">PRODUCTS</a><a href="/privacy">PRIVACY</a><a href="/terms">TERMS</a><a href="/refund">REFUND</a></div>
+    <div class="fc">© 2026 NEXOVA DIGITAL SOLUTION (CA0417238-V) · SHAH ALAM, MALAYSIA</div>
+  </footer>
+
+  <script>
+    // Scroll fade
+    const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:.08});
+    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      item.querySelector('.faq-q').addEventListener('click',()=>{
+        const isOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+        if(!isOpen)item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>
