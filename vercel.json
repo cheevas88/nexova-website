@@ -4,6 +4,9 @@
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/refund", "destination": "/refund.html" },
     { "source": "/products/sme-handbook", "destination": "/products/sme-handbook.html" },
-    { "source": "/products/community-bot", "destination": "/products/community-bot.html" }
+    { "source": "/products/community-bot", "destination": "/products/community-bot.html" },
+    { "source": "/products/whatsapp-toolkit", "destination": "/products/whatsapp-toolkit.html" },
+    { "source": "/products/ecommerce-suite", "destination": "/products/ecommerce-suite.html" },
+    { "source": "/products/website-templates", "destination": "/products/website-templates.html" }
   ]
 }
