@@ -2,6 +2,7 @@
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
-    { "source": "/refund", "destination": "/refund.html" }
+    { "source": "/refund", "destination": "/refund.html" },
+    { "source": "/products/sme-handbook", "destination": "/products/sme-handbook.html" }
   ]
 }
