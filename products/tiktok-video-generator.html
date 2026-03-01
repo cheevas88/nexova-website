@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Viral Video Generator — RM99 — Nexova Digital</title>
+<meta name="description" content="Generate professional TikTok videos in 3 minutes. No editing skills needed. Upload photos and get viral-ready 15-30s videos. From RM99 for 10 videos.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#000;color:#fff;overflow-x:hidden;line-height:1.6}
+a{color:#00fff5;text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Cyberpunk grid background */
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+background:linear-gradient(0deg,rgba(0,255,245,0.02) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,255,245,0.02) 1px,transparent 1px);
+background-size:50px 50px;pointer-events:none;z-index:-1}
+
+/* Scan lines */
+body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+background:linear-gradient(transparent 50%,rgba(255,0,170,0.03) 50%);
+background-size:100% 4px;pointer-events:none;z-index:999;animation:scan 8s linear infinite}
+@keyframes scan{0%{background-position:0 0}100%{background-position:0 100%}}
+
+/* Nav */
+nav{position:sticky;top:0;background:rgba(27,58,107,0.95);backdrop-filter:blur(10px);
+padding:15px 5%;border-bottom:2px solid #00fff5;z-index:1000;
+box-shadow:0 0 20px rgba(0,255,245,0.3)}
+nav .logo{font-size:22px;font-weight:bold;color:#00fff5;text-shadow:0 0 10px rgba(0,255,245,0.8)}
+nav a{margin-left:25px;font-size:14px;color:#fff;transition:all 0.3s}
+nav a:hover{color:#ff00aa;text-shadow:0 0 8px rgba(255,0,170,0.8)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:80px 5% 60px;
+align-items:center;min-height:70vh;position:relative}
+.hero-left h1{font-size:48px;margin-bottom:20px;
+background:linear-gradient(135deg,#ff00aa,#00fff5);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+text-shadow:0 0 30px rgba(255,0,170,0.4);line-height:1.2}
+.hero-left .tagline{font-size:20px;color:#aaa;margin-bottom:30px;font-weight:300}
+.hero-left .price{font-size:36px;color:#f59e0b;margin:20px 0;font-weight:bold;
+text-shadow:0 0 20px rgba(245,158,11,0.6)}
+.hero-left .price-note{font-size:14px;color:#888;margin-bottom:30px}
+
+/* Badges */
+.badges{display:flex;gap:10px;margin:20px 0;flex-wrap:wrap}
+.badge{background:rgba(0,255,245,0.1);border:1px solid #00fff5;padding:6px 12px;
+font-size:12px;border-radius:20px;color:#00fff5;white-space:nowrap}
+.badge.hot{background:rgba(255,0,170,0.1);border-color:#ff00aa;color:#ff00aa}
+
+/* Quick stats */
+.quick-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:30px 0}
+.stat-box{background:rgba(27,58,107,0.3);border:1px solid #00fff5;padding:15px;text-align:center;
+border-radius:8px}
+.stat-box .num{font-size:24px;color:#00fff5;font-weight:bold;display:block;margin-bottom:5px}
+.stat-box .label{font-size:11px;color:#aaa;text-transform:uppercase}
+
+/* CTA button */
+.cta-btn{display:inline-block;background:linear-gradient(135deg,#ff00aa,#f59e0b);
+padding:18px 50px;font-size:18px;font-weight:bold;color:#fff;border:none;cursor:pointer;
+border-radius:50px;box-shadow:0 0 30px rgba(255,0,170,0.6);transition:all 0.3s;
+text-transform:uppercase;letter-spacing:1px}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 0 40px rgba(255,0,170,0.9);text-decoration:none}
+
+/* Phone mockup */
+.hero-right{position:relative;display:flex;justify-content:center;align-items:center}
+.phone-mockup{width:280px;height:580px;background:#000;border-radius:40px;
+border:8px solid #222;box-shadow:0 20px 60px rgba(0,255,245,0.4);position:relative;overflow:hidden}
+.phone-screen{width:100%;height:100%;background:linear-gradient(180deg,#1a1a2e 0%,#16213e 100%);
+position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.tiktok-icon{font-size:60px;margin-bottom:20px}
+.video-preview{width:90%;background:rgba(255,255,255,0.05);border:2px dashed #00fff5;
+border-radius:15px;padding:30px;text-align:center;margin:15px 0}
+.video-preview::before{content:'📹';font-size:40px;display:block;margin-bottom:10px}
+.video-preview p{font-size:12px;color:#aaa}
+.processing{font-size:11px;color:#00fff5;margin-top:15px;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:0.5}50%{opacity:1}}
+
+/* Section */
+.section{padding:60px 5%}
+.section-title{font-size:36px;text-align:center;margin-bottom:50px;
+background:linear-gradient(135deg,#00fff5,#f59e0b);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* Pricing grid */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;max-width:1100px;margin:0 auto}
+.price-card{background:rgba(27,58,107,0.2);border:2px solid #444;border-radius:15px;
+padding:40px 30px;text-align:center;transition:all 0.3s;position:relative}
+.price-card:hover{transform:translateY(-10px);border-color:#00fff5;
+box-shadow:0 20px 50px rgba(0,255,245,0.3)}
+.price-card.popular{border-color:#ff00aa;box-shadow:0 10px 40px rgba(255,0,170,0.4)}
+.price-card.popular::before{content:'MOST POPULAR';position:absolute;top:-15px;left:50%;
+transform:translateX(-50%);background:#ff00aa;padding:5px 20px;font-size:11px;
+border-radius:20px;font-weight:bold;letter-spacing:1px}
+.price-card h3{font-size:24px;margin-bottom:15px;color:#00fff5}
+.price-card .amount{font-size:48px;color:#f59e0b;font-weight:bold;margin:20px 0}
+.price-card .videos{font-size:18px;color:#aaa;margin-bottom:10px}
+.price-card .per-video{font-size:14px;color:#666;margin-bottom:30px}
+.price-card ul{list-style:none;text-align:left;margin:20px 0}
+.price-card li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:14px}
+.price-card li::before{content:'✓';color:#00fff5;margin-right:10px;font-weight:bold}
+
+/* Styles grid */
+.styles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;max-width:1200px;margin:0 auto}
+.style-card{background:rgba(27,58,107,0.2);border:2px solid #444;border-radius:12px;
+padding:25px;text-align:center;transition:all 0.3s}
+.style-card:hover{border-color:#00fff5;transform:scale(1.05)}
+.style-card .icon{font-size:50px;margin-bottom:15px;display:block}
+.style-card h4{font-size:18px;margin-bottom:10px;color:#00fff5}
+.style-card p{font-size:13px;color:#aaa;line-height:1.5}
+
+/* Workflow */
+.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:40px auto}
+.step{background:rgba(27,58,107,0.2);border:2px solid #444;border-radius:12px;padding:30px;
+text-align:center;position:relative}
+.step .num{position:absolute;top:-20px;left:50%;transform:translateX(-50%);
+width:40px;height:40px;background:#ff00aa;border-radius:50%;display:flex;align-items:center;
+justify-content:center;font-size:20px;font-weight:bold;box-shadow:0 0 20px rgba(255,0,170,0.6)}
+.step .icon{font-size:40px;margin:20px 0 15px}
+.step h4{font-size:16px;margin-bottom:10px;color:#00fff5}
+.step p{font-size:13px;color:#aaa}
+
+/* Features */
+.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;max-width:1000px;margin:0 auto}
+.feature-box{background:rgba(27,58,107,0.2);border-left:4px solid #00fff5;padding:25px;border-radius:8px}
+.feature-box h4{font-size:18px;margin-bottom:10px;color:#00fff5}
+.feature-box p{font-size:14px;color:#aaa;line-height:1.6}
+
+/* FAQ */
+.faq{max-width:900px;margin:0 auto}
+.faq-item{background:rgba(27,58,107,0.2);border:1px solid #444;border-radius:10px;
+padding:25px;margin-bottom:20px}
+.faq-item h4{font-size:18px;margin-bottom:12px;color:#00fff5}
+.faq-item p{font-size:14px;color:#aaa;line-height:1.7}
+
+/* Guarantee */
+.guarantee{background:linear-gradient(135deg,rgba(0,255,245,0.1),rgba(245,158,11,0.1));
+border:2px solid #00fff5;border-radius:15px;padding:40px;text-align:center;max-width:800px;
+margin:40px auto}
+.guarantee h3{font-size:28px;margin-bottom:20px;color:#00fff5}
+.guarantee p{font-size:16px;color:#aaa;line-height:1.8}
+
+/* Sticky CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;width:100%;background:rgba(27,58,107,0.98);
+backdrop-filter:blur(10px);padding:15px 5%;border-top:2px solid #ff00aa;z-index:999;
+display:flex;justify-content:space-between;align-items:center;box-shadow:0 -5px 30px rgba(255,0,170,0.4)}
+.sticky-cta .info{font-size:16px}
+.sticky-cta .price-tag{font-size:24px;color:#f59e0b;font-weight:bold;margin:0 20px}
+
+/* Footer */
+footer{background:#0a0e27;padding:40px 5%;text-align:center;border-top:2px solid #00fff5}
+footer p{color:#666;font-size:13px;margin:10px 0}
+footer a{color:#00fff5;margin:0 15px}
+
+/* Responsive */
+@media(max-width:768px){
+.hero{grid-template-columns:1fr;text-align:center;padding:40px 5%}
+.hero-left h1{font-size:32px}
+.hero-right{margin-top:30px}
+.phone-mockup{width:240px;height:500px}
+.pricing-grid,.styles-grid,.workflow,.features-grid{grid-template-columns:1fr}
+.quick-stats{grid-template-columns:repeat(2,1fr)}
+.sticky-cta{flex-direction:column;gap:10px;padding:15px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<span class="logo">NEXOVA DIGITAL</span>
+<a href="/">Home</a>
+<a href="/#products">Products</a>
+<a href="https://wa.me/60165484979" target="_blank">Contact</a>
+</nav>
+
+<section class="hero">
+<div class="hero-left">
+<h1>TikTok Viral Video Generator</h1>
+<p class="tagline">Generate professional viral videos in 3 minutes — no editing skills required</p>
+
+<div class="badges">
+<span class="badge hot">🔥 HOT SELLING</span>
+<span class="badge">📱 WhatsApp Delivery</span>
+<span class="badge">⚡ 2hr Turnaround</span>
+<span class="badge">🎬 Professional Templates</span>
+</div>
+
+<div class="quick-stats">
+<div class="stat-box"><span class="num">3</span><span class="label">Minutes</span></div>
+<div class="stat-box"><span class="num">15-30s</span><span class="label">Video Length</span></div>
+<div class="stat-box"><span class="num">4</span><span class="label">Styles</span></div>
+<div class="stat-box"><span class="num">0</span><span class="label">Skills Needed</span></div>
+</div>
+
+<div class="price">RM99<span style="font-size:20px;color:#aaa"> / 10 Videos</span></div>
+<p class="price-note">Only RM9.90 per video • 10x cheaper than hiring a video editor</p>
+
+<a href="https://wa.me/60165484979?text=Hi,%20I%20want%20to%20buy%20TikTok%20Video%20Generator%20package" target="_blank" class="cta-btn">BUY NOW — RM99</a>
+</div>
+
+<div class="hero-right">
+<div class="phone-mockup">
+<div class="phone-screen">
+<div class="tiktok-icon">📱</div>
+<div class="video-preview">
+<p style="font-size:14px;color:#00fff5;margin-bottom:10px">Your Video Preview</p>
+<p>Upload 3-5 photos<br>Fill in product info<br>AI generates viral video</p>
+</div>
+<div class="processing">⚙️ Processing in 2 minutes...</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:rgba(27,58,107,0.05)">
+<h2 class="section-title">Choose Your Package</h2>
+<div class="pricing-grid">
+
+<div class="price-card">
+<h3>Starter</h3>
+<div class="amount">RM99</div>
+<div class="videos">10 Videos</div>
+<div class="per-video">RM9.90/video</div>
+<a href="https://wa.me/60165484979?text=Hi,%20I%20want%20the%20Starter%20package%20(RM99%20/%2010%20videos)" target="_blank" class="cta-btn" style="width:100%;padding:12px">ORDER NOW</a>
+<ul>
+<li>10 video credits</li>
+<li>4 style templates</li>
+<li>2hr delivery</li>
+<li>WhatsApp support</li>
+<li>6 months validity</li>
+</ul>
+</div>
+
+<div class="price-card popular">
+<h3>Business</h3>
+<div class="amount">RM199</div>
+<div class="videos">25 Videos</div>
+<div class="per-video">RM7.96/video</div>
+<a href="https://wa.me/60165484979?text=Hi,%20I%20want%20the%20Business%20package%20(RM199%20/%2025%20videos)" target="_blank" class="cta-btn" style="width:100%;padding:12px">ORDER NOW</a>
+<ul>
+<li>25 video credits</li>
+<li>4 style templates</li>
+<li>2hr delivery</li>
+<li>WhatsApp support</li>
+<li>1 year validity</li>
+<li>1 free revision per video</li>
+</ul>
+</div>
+
+<div class="price-card">
+<h3>Enterprise</h3>
+<div class="amount">RM399</div>
+<div class="videos">60 Videos</div>
+<div class="per-video">RM6.65/video</div>
+<a href="https://wa.me/60165484979?text=Hi,%20I%20want%20the%20Enterprise%20package%20(RM399%20/%2060%20videos)" target="_blank" class="cta-btn" style="width:100%;padding:12px">ORDER NOW</a>
+<ul>
+<li>60 video credits</li>
+<li>4 style templates</li>
+<li>1hr priority delivery</li>
+<li>Priority WhatsApp support</li>
+<li>Lifetime validity</li>
+<li>2 free revisions per video</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">4 Professional Video Styles</h2>
+<div class="styles-grid">
+
+<div class="style-card">
+<span class="icon">🍜</span>
+<h4>Food & Beverage</h4>
+<p>Perfect for: Restaurants, cafes, food delivery<br>Style: Appetizing, vibrant<br>Music: Upbeat tempo</p>
+</div>
+
+<div class="style-card">
+<span class="icon">🛍️</span>
+<h4>Product Showcase</h4>
+<p>Perfect for: E-commerce, retail<br>Style: Professional, clean<br>Music: Modern vibe</p>
+</div>
+
+<div class="style-card">
+<span class="icon">💇</span>
+<h4>Service Business</h4>
+<p>Perfect for: Salons, clinics, spas<br>Style: Warm, trustworthy<br>Music: Soft & soothing</p>
+</div>
+
+<div class="style-card">
+<span class="icon">🎉</span>
+<h4>Promotion & Sale</h4>
+<p>Perfect for: Discounts, offers<br>Style: Urgent, exciting<br>Music: Fast-paced</p>
+</div>
+
+</div>
+</section>
+
+<section class="section" style="background:rgba(27,58,107,0.05)">
+<h2 class="section-title">How It Works — Simple 4 Steps</h2>
+<div class="workflow">
+
+<div class="step">
+<div class="num">1</div>
+<div class="icon">💳</div>
+<h4>Purchase Package</h4>
+<p>Choose your package, pay via WhatsApp, instantly get video credits</p>
+</div>
+
+<div class="step">
+<div class="num">2</div>
+<div class="icon">📸</div>
+<h4>Send Materials</h4>
+<p>WhatsApp us 3-5 photos + product info + choose style</p>
+</div>
+
+<div class="step">
+<div class="num">3</div>
+<div class="icon">⚙️</div>
+<h4>AI Generates</h4>
+<p>We use professional AI tools to create 15-30s viral-ready videos</p>
+</div>
+
+<div class="step">
+<div class="num">4</div>
+<div class="icon">📲</div>
+<h4>Receive Video</h4>
+<p>Get MP4 file via WhatsApp within 2 hours, ready to post on TikTok</p>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">What You Get</h2>
+<div class="features-grid">
+
+<div class="feature-box">
+<h4>🎬 Professional Video Templates</h4>
+<p>4 battle-tested viral templates covering food, products, services, and promotions — each optimized for maximum TikTok engagement.</p>
+</div>
+
+<div class="feature-box">
+<h4>🎵 Trending Background Music</h4>
+<p>Curated selection of 5 trending TikTok BGMs, auto-matched to your video style. Copyright-free and ready to go viral.</p>
+</div>
+
+<div class="feature-box">
+<h4>✍️ Dynamic Text Animations</h4>
+<p>Product names and selling points automatically converted to eye-catching text animations. Supports English, BM, and Mandarin.</p>
+</div>
+
+<div class="feature-box">
+<h4>⚡ Fast Delivery Promise</h4>
+<p>2-hour turnaround during business hours, 1-hour rush option available. Weekend and holiday service included.</p>
+</div>
+
+<div class="feature-box">
+<h4>🔄 Free Revision Service</h4>
+<p>Business package and above include 1-2 free revisions to ensure your video is exactly what you want.</p>
+</div>
+
+<div class="feature-box">
+<h4>📱 Full WhatsApp Support</h4>
+<p>No app downloads needed. Submit materials, receive videos, and ask questions — all through WhatsApp.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section" style="background:rgba(27,58,107,0.05)">
+<div class="guarantee">
+<h3>💯 Our Guarantees</h3>
+<p><strong>Quality Guarantee:</strong> If the video doesn't meet standards, we'll remake it for free until you're satisfied.<br><br>
+<strong>Delivery Guarantee:</strong> 2-hour delivery promise during business hours. Late delivery = free video.<br><br>
+<strong>Refund Guarantee:</strong> Not happy with your first video? Full refund within 7 days, no questions asked.</p>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq">
+
+<div class="faq-item">
+<h4>Q: Do I need to edit the video myself?</h4>
+<p>A: Absolutely not! Just provide product photos and simple info. We handle all editing, effects, and music. You receive a finished MP4 file ready to post.</p>
+</div>
+
+<div class="faq-item">
+<h4>Q: How is the video delivered?</h4>
+<p>A: Via WhatsApp as an MP4 video file. File size is optimized for mobile, ready to save and upload to TikTok without conversion.</p>
+</div>
+
+<div class="faq-item">
+<h4>Q: What if my photo quality isn't good?</h4>
+<p>A: Minimum requirement is 1080x1080 pixels, clear and not blurry. If photos don't meet standards, we'll notify you to retake, or charge RM10 for photo enhancement.</p>
+</div>
+
+<div class="faq-item">
+<h4>Q: Can I use my own music?</h4>
+<p>A: Yes! If you have specific BGM, send it to us. However, we strongly recommend using our curated trending music for better viral potential.</p>
+</div>
+
+<div class="faq-item">
+<h4>Q: Do video credits expire?</h4>
+<p>A: Starter package: 6 months validity. Business: 1 year. Enterprise: lifetime validity. Unused credits expire and are non-refundable.</p>
+</div>
+
+<div class="faq-item">
+<h4>Q: Can I use videos on other platforms (Instagram/Facebook)?</h4>
+<p>A: Absolutely! While optimized for TikTok, videos are standard MP4 format and can be uploaded to any social media platform.</p>
+</div>
+
+<div class="faq-item">
+<h4>Q: What if I'm not satisfied with the video?</h4>
+<p>A: Business package and above include free revisions. Starter package can purchase revisions at RM20 each. Not satisfied with your first video? Request full refund within 7 days.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section" style="background:linear-gradient(135deg,rgba(255,0,170,0.1),rgba(0,255,245,0.1));padding:80px 5%">
+<div style="max-width:800px;margin:0 auto;text-align:center">
+<h2 style="font-size:42px;margin-bottom:20px;color:#fff">Ready to Go Viral? 🚀</h2>
+<p style="font-size:18px;color:#aaa;margin-bottom:40px;line-height:1.8">
+No editing skills needed, no expensive software. Generate professional TikTok viral videos in 3 minutes.<br>
+Order now and receive your first video within 2 hours!
+</p>
+<a href="https://wa.me/60165484979?text=Hi,%20I%20want%20to%20buy%20TikTok%20Video%20Generator%20package" target="_blank" class="cta-btn" style="font-size:20px">
+💬 WhatsApp ORDER NOW
+</a>
+<p style="margin-top:30px;font-size:14px;color:#666">
+✓ 2hr delivery ✓ 7-day money back ✓ Professional WhatsApp support
+</p>
+</div>
+</section>
+
+<div class="sticky-cta">
+<div class="info">
+<strong>TikTok Viral Video Generator</strong><br>
+<span style="font-size:13px;color:#aaa">Generate viral videos in 3 minutes • No editing skills needed</span>
+</div>
+<span class="price-tag">FROM RM99</span>
+<a href="https://wa.me/60165484979?text=Hi,%20I%20want%20to%20buy%20TikTok%20Video%20Generator" target="_blank" class="cta-btn" style="padding:12px 30px;font-size:14px">
+ORDER NOW
+</a>
+</div>
+
+<footer>
+<p><strong>NEXOVA DIGITAL SOLUTION</strong> (CA0417238-V)</p>
+<p>Shah Alam, Selangor, Malaysia</p>
+<a href="/privacy">Privacy Policy</a>
+<a href="/terms">Terms of Service</a>
+<a href="/refund">Refund Policy</a>
+<p style="margin-top:20px;color:#444">© 2026 Nexova Digital Solution. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
