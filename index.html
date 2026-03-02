@@ -22,7 +22,7 @@
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{background:var(--bg);color:var(--text-1);font-family:var(--font-body);font-size:17px;line-height:1.7;overflow-x:hidden;cursor:none;}
+    body{background:var(--bg);color:var(--text-1);font-family:var(--font-body);font-size:17px;line-height:1.7;overflow-x:hidden;cursor:auto;}
     a{color:inherit;text-decoration:none;}
 
     /* Cursor */
@@ -380,7 +380,7 @@
             <div class="svc-item"><span class="svc-num">03</span><div><div class="svc-name">Server Architecture & Deployment</div><div class="svc-desc">Cloud setup, CI/CD pipelines, performance optimisation and ongoing infrastructure management.</div></div></div>
           </div>
         </div>
-        <div class="fade-up">
+        <div>
           <div class="svc-panel">
             <div class="plabel">// STARTING_PRICE</div>
             <div class="ppanel-price">RM 3,000</div>
@@ -409,10 +409,10 @@
         <p class="sec-sub" style="margin:0 auto;">We understand the local market — payment methods, languages, regulations and business culture across the region.</p>
       </div>
       <div class="why-grid">
-        <div class="why-card fade-up"><div class="why-icon"><span>⚡</span></div><div class="why-title">Instant Delivery</div><div class="why-desc">Digital products delivered immediately after payment. Zero waiting time.</div></div>
-        <div class="why-card fade-up"><div class="why-icon"><span>🇲🇾</span></div><div class="why-title">Local Payments</div><div class="why-desc">FPX, TNG eWallet, GrabPay, credit cards — every major Malaysian payment method.</div></div>
-        <div class="why-card fade-up"><div class="why-icon"><span>🛡️</span></div><div class="why-title">SSM Registered</div><div class="why-desc">Officially registered company (CA0417238-V). Full tax invoices issued.</div></div>
-        <div class="why-card fade-up"><div class="why-icon"><span>💬</span></div><div class="why-title">WhatsApp Support</div><div class="why-desc">Support in English, BM or Mandarin. Real humans, fast response.</div></div>
+        <div class="why-card"><div class="why-icon"><span>⚡</span></div><div class="why-title">Instant Delivery</div><div class="why-desc">Digital products delivered immediately after payment. Zero waiting time.</div></div>
+        <div class="why-card"><div class="why-icon"><span>🇲🇾</span></div><div class="why-title">Local Payments</div><div class="why-desc">FPX, TNG eWallet, GrabPay, credit cards — every major Malaysian payment method.</div></div>
+        <div class="why-card"><div class="why-icon"><span>🛡️</span></div><div class="why-title">SSM Registered</div><div class="why-desc">Officially registered company (CA0417238-V). Full tax invoices issued.</div></div>
+        <div class="why-card"><div class="why-icon"><span>💬</span></div><div class="why-title">WhatsApp Support</div><div class="why-desc">Support in English, BM or Mandarin. Real humans, fast response.</div></div>
       </div>
     </div>
   </section>
@@ -488,6 +488,7 @@
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Custom cursor
+    document.body.style.cursor="none";
     const cur=document.getElementById('cursor'),rng=document.getElementById('ring');
     let mx=0,my=0,rx=0,ry=0;
     document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
